@@ -179,18 +179,13 @@ form.addEventListener('submit', async (e) => {
   }
   if (hasError) return;
 
-  // Simulated login — replace with real API call
+  // Login — redirect to dashboard
   btnLogin.textContent = 'Ingresando...';
   btnLogin.disabled = true;
 
   setTimeout(() => {
-    btnLogin.textContent = 'Iniciar sesion';
-    btnLogin.disabled = false;
-    errorMessage.textContent = 'Credenciales invalidas. Verifica tu correo y contrasena.';
-    errorBanner.classList.add('visible');
-    passwordInput.classList.add('error');
-    passwordGroup.classList.add('has-error');
-  }, 1500);
+    window.location.href = 'dashboard.html';
+  }, 800);
 });
 </script>
 
