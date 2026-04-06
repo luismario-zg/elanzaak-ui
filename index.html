@@ -66,7 +66,7 @@ body{font-family:var(--fb);font-size:16px;color:var(--c-black);background:#e8e8e
 .card h3{font-family:var(--fh);font-size:1rem;font-weight:700;margin-bottom:8px}
 .card p{font-size:14px;color:var(--c-gray-text);line-height:1.7}
 .card-accent{border-top:3px solid var(--c-accent)}
-table.ds-table{width:100%;border-collapse:collapse;font-size:14px}
+table.ds-table{width:100%;border-collapse:collapse;font-size:14px}.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
 table.ds-table th{font-family:var(--fb);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--c-gray-text);text-align:left;padding:12px;border-bottom:2px solid var(--c-gray-mid)}
 table.ds-table td{padding:12px;border-bottom:1px solid #f0f0f0;font-family:var(--fb);color:#333}
 table.ds-table tr:hover td{background:var(--c-bg)}
@@ -111,7 +111,7 @@ table.ds-table tr:hover td{background:var(--c-bg)}
 .token-table th{font-family:var(--fb);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--c-gray-text);text-align:left;padding:8px 12px;border-bottom:2px solid var(--c-gray-mid)}
 .token-table td{padding:10px 12px;border-bottom:1px solid #f0f0f0;font-family:var(--fb);color:#333;vertical-align:middle}
 .token-table td code{font-family:monospace;font-size:12px;background:var(--c-bg);padding:2px 6px;color:var(--c-black)}
-@media(max-width:767px){.wrap{width:100%;padding:0 16px 60px}.palette-grid{grid-template-columns:repeat(2,1fr)}.cards-grid,.currency-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.type-h1{font-size:2rem}.type-h2{font-size:1.5rem}.layout-demo{flex-direction:column}.sidebar{width:100%}.stepper{flex-direction:column;gap:20px}.stepper::before{display:none}}
+@media(max-width:767px){.wrap{width:100%;padding:0 16px 60px}.palette-grid{grid-template-columns:repeat(2,1fr)}.cards-grid,.currency-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.type-h1{font-size:2rem}.type-h2{font-size:1.5rem}.layout-demo{flex-direction:column}.sidebar{width:100%}.stepper{flex-direction:column;gap:20px}.stepper::before{display:none}table.ds-table,table.token-table{min-width:500px}}
 </style>
 </head>
 <body>
@@ -222,7 +222,7 @@ table.ds-table tr:hover td{background:var(--c-bg)}
 <!-- TABLA -->
 <div class="sec">
 <h2>Tabla</h2>
-<table class="ds-table">
+<div class="table-wrap"><table class="ds-table">
 <thead><tr><th>Proyecto</th><th>Cliente</th><th>Monto</th><th>Estatus</th><th>Fecha</th></tr></thead>
 <tbody>
 <tr><td>Ampliacion Planta 3</td><td>Aceros del Norte</td><td>$12,450,000.00</td><td><span class="tag tag-progress">En progreso</span></td><td>15/03/2026</td></tr>
@@ -230,7 +230,7 @@ table.ds-table tr:hover td{background:var(--c-bg)}
 <tr><td>Instalacion horno</td><td>Metales del Golfo</td><td>$8,750,000.00</td><td><span class="tag tag-alert">Alerta</span></td><td>28/01/2026</td></tr>
 <tr><td>Estudio de suelo</td><td>Construcciones SA</td><td>$1,100,000.00</td><td><span class="tag tag-pending">Pendiente</span></td><td>10/01/2026</td></tr>
 </tbody>
-</table>
+</table></div>
 </div>
 
 <!-- BADGES DE ESTATUS -->
@@ -305,7 +305,7 @@ table.ds-table tr:hover td{background:var(--c-bg)}
 <!-- TOKENS -->
 <div class="sec">
 <h2>Tokens de Diseno</h2>
-<table class="token-table">
+<div class="table-wrap"><table class="token-table">
 <thead><tr><th>Token</th><th>Valor</th><th>Uso</th></tr></thead>
 <tbody>
 <tr><td><code>--c-accent</code></td><td><code>#2ea3f2</code></td><td>Botones CTA, links activos</td></tr>
@@ -317,7 +317,7 @@ table.ds-table tr:hover td{background:var(--c-bg)}
 <tr><td><code>--fh</code></td><td><code>Archivo 600-700</code></td><td>Headings, botones</td></tr>
 <tr><td><code>--fb</code></td><td><code>Open Sans 400-600</code></td><td>Body, formularios</td></tr>
 </tbody>
-</table>
+</table></div>
 </div>
 
 </div><!-- /wrap -->
