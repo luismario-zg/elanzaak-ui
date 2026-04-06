@@ -13,7 +13,8 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--c-black:#000;--c-white:#fff;--c-accent:#2ea3f2;--c-danger:#ff6261;--c-success:#4CAF50;--c-warning:#FFC107;--c-navy:#00639a;--c-bg:#f9f9f9;--c-sidebar:#f3f3f3;--c-gray-mid:#ccc;--c-gray-text:#555;--fh:'Archivo',sans-serif;--fb:'Open Sans',sans-serif;--max:1080px;--sh:0 2px 8px rgba(0,0,0,.08)}
-body{font-family:var(--fb);font-size:16px;color:var(--c-black);background:#e8e8e8;line-height:1.7;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html{overflow-x:hidden;max-width:100vw}
+body{font-family:var(--fb);font-size:16px;color:var(--c-black);background:#e8e8e8;line-height:1.7;-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:hidden;max-width:100vw}
 .wrap{max-width:var(--max);width:80%;margin:0 auto;padding:0 0 80px}
 .sec{background:var(--c-white);box-shadow:var(--sh);padding:40px;margin-top:32px;border-radius:0}
 .sec h2{font-family:var(--fh);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--c-gray-text);margin-bottom:28px;padding-bottom:10px;border-bottom:1px solid var(--c-gray-mid)}
@@ -67,7 +68,7 @@ body{font-family:var(--fb);font-size:16px;color:var(--c-black);background:#e8e8e
 .card{background:var(--c-white);border-radius:0;box-shadow:var(--sh);padding:28px}
 .card-icon{width:40px;height:40px;margin-bottom:16px;color:var(--c-accent)}
 .card h3{font-family:var(--fh);font-size:1rem;font-weight:700;margin-bottom:8px}
-.card p{font-size:14px;color:var(--c-gray-text);line-height:1.7;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.card p{font-size:14px;color:var(--c-gray-text);line-height:1.7;-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:hidden}
 .card-accent{border-top:3px solid var(--c-accent)}
 table.ds-table{width:100%;border-collapse:collapse;font-size:14px}.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
 table.ds-table th{font-family:var(--fb);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--c-gray-text);text-align:left;padding:12px;border-bottom:2px solid var(--c-gray-mid)}
