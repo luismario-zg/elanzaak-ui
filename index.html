@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design System - Elan Zaak</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--c-black:#000;--c-white:#fff;--c-accent:#2ea3f2;--c-danger:#ff6261;--c-success:#4CAF50;--c-warning:#FFC107;--c-navy:#00639a;--c-bg:#f9f9f9;--c-sidebar:#f3f3f3;--c-gray-mid:#ccc;--c-gray-text:#555;--fh:'Archivo',sans-serif;--fb:'Open Sans',sans-serif;--max:1080px;--sh:0 2px 8px rgba(0,0,0,.08)}
+body{font-family:var(--fb);font-size:16px;color:var(--c-black);background:#e8e8e8;line-height:1.7}
+.wrap{max-width:var(--max);width:80%;margin:0 auto;padding:0 0 80px}
+.sec{background:var(--c-white);box-shadow:var(--sh);padding:40px;margin-top:32px;border-radius:0}
+.sec h2{font-family:var(--fh);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--c-gray-text);margin-bottom:28px;padding-bottom:10px;border-bottom:1px solid var(--c-gray-mid)}
+.app-header{background:var(--c-white);box-shadow:var(--sh);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;border-radius:0}
+.logo-ph{width:120px;height:32px;background:var(--c-gray-mid);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--c-gray-text);font-family:var(--fb)}
+.header-right{display:flex;align-items:center;gap:16px}
+.header-user{font-family:var(--fb);font-size:13px;color:var(--c-gray-text)}
+.header-logout{font-family:var(--fb);font-size:13px;color:var(--c-danger);text-decoration:none;font-weight:600}
+.layout-demo{display:flex;min-height:400px;border:1px solid #e0e0e0;overflow:hidden}
+.sidebar{width:240px;background:var(--c-sidebar);padding:24px 0;flex-shrink:0}
+.sidebar-item{font-family:var(--fb);font-size:14px;padding:12px 24px;color:var(--c-gray-text);cursor:pointer;transition:all .15s;border-left:4px solid transparent}
+.sidebar-item:hover{background:#e9e9e9;color:var(--c-black)}
+.sidebar-item.active{border-left:4px solid var(--c-navy);background:var(--c-white);color:var(--c-black);font-weight:600}
+.sidebar-title{font-family:var(--fh);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--c-gray-text);padding:8px 24px 12px;font-weight:600}
+.main-content{flex:1;padding:32px;background:var(--c-white)}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.swatch{box-shadow:var(--sh)}
+.swatch-color{height:100px;border:1px solid rgba(0,0,0,.06)}
+.swatch-info{padding:12px 14px;border:1px solid var(--c-gray-mid);border-top:none}
+.swatch-info .hex{font-family:monospace;font-size:13px;font-weight:600;display:block;margin-bottom:4px}
+.swatch-info .label{font-size:11px;color:var(--c-gray-text);line-height:1.4}
+.type-ex{margin-bottom:32px}.type-ex:last-child{margin-bottom:0}
+.type-tag{font-family:var(--fb);font-size:11px;color:var(--c-gray-text);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;display:block}
+.type-h1{font-family:var(--fh);font-size:3rem;font-weight:700;line-height:1.2;letter-spacing:.05em}
+.type-h2{font-family:var(--fh);font-size:2rem;font-weight:700;line-height:1.25;letter-spacing:.05em}
+.type-h3{font-family:var(--fh);font-size:1.4rem;font-weight:600;line-height:1.3}
+.type-body{font-family:var(--fb);font-size:16px;font-weight:400;line-height:1.8;color:#333;max-width:620px}
+.type-label{font-family:var(--fb);font-size:13px;font-weight:600;letter-spacing:.05em;color:var(--c-gray-text)}
+.type-small{font-family:var(--fb);font-size:12px;color:var(--c-gray-text)}
+.btn-row{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-bottom:20px}
+.btn{font-family:var(--fh);font-size:14px;font-weight:600;padding:12px 28px;border-radius:0;cursor:pointer;letter-spacing:.04em;transition:background .2s,color .2s,border-color .2s;display:inline-block;text-decoration:none;border:2px solid transparent}
+.btn-primary{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}.btn-primary:hover{background:#1a8fd4;border-color:#1a8fd4}
+.btn-secondary{background:transparent;color:var(--c-accent);border-color:var(--c-accent)}.btn-secondary:hover{background:var(--c-accent);color:#fff}
+.btn-dark{background:var(--c-black);color:#fff;border-color:var(--c-black)}.btn-dark:hover{background:#333;border-color:#333}
+.btn-danger{background:var(--c-danger);color:#fff;border-color:var(--c-danger)}
+.btn-disabled{background:#e0e0e0;color:#999;border-color:#e0e0e0;cursor:not-allowed;pointer-events:none}
+.btn-sm{padding:8px 18px;font-size:12px}
+.btn-label{font-family:var(--fb);font-size:11px;color:var(--c-gray-text);text-align:center;margin-top:6px}
+.btn-item{display:flex;flex-direction:column;align-items:flex-start}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-label{font-family:var(--fb);font-size:13px;font-weight:600;color:var(--c-black)}
+.form-input{font-family:var(--fb);font-size:15px;padding:10px 16px;border:1px solid var(--c-gray-mid);border-radius:0;outline:none;background:var(--c-white);transition:border-color .2s}
+.form-input:focus{border-color:var(--c-accent)}.form-input.error{border-color:var(--c-danger)}
+.form-error{font-size:12px;color:var(--c-danger)}.form-hint{font-size:12px;color:var(--c-gray-text)}
+.form-select{font-family:var(--fb);font-size:15px;padding:10px 16px;border:1px solid var(--c-gray-mid);border-radius:0;outline:none;background:var(--c-white);appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23555' d='M0 0l6 8 6-8z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;cursor:pointer}
+.chk-group{display:flex;align-items:center;gap:8px}
+.chk-group input[type=checkbox]{width:18px;height:18px;accent-color:var(--c-accent);cursor:pointer}
+.chk-group label{font-family:var(--fb);font-size:14px;color:var(--c-black);cursor:pointer}
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--c-white);border-radius:0;box-shadow:var(--sh);padding:28px}
+.card-icon{width:40px;height:40px;margin-bottom:16px;color:var(--c-accent)}
+.card h3{font-family:var(--fh);font-size:1rem;font-weight:700;margin-bottom:8px}
+.card p{font-size:14px;color:var(--c-gray-text);line-height:1.7}
+.card-accent{border-top:3px solid var(--c-accent)}
+table.ds-table{width:100%;border-collapse:collapse;font-size:14px}
+table.ds-table th{font-family:var(--fb);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--c-gray-text);text-align:left;padding:12px;border-bottom:2px solid var(--c-gray-mid)}
+table.ds-table td{padding:12px;border-bottom:1px solid #f0f0f0;font-family:var(--fb);color:#333}
+table.ds-table tr:hover td{background:var(--c-bg)}
+.badge-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.tag{font-family:var(--fb);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;display:inline-block;border-radius:0}
+.tag-progress{background:var(--c-accent);color:#fff}.tag-complete{background:var(--c-success);color:#fff}
+.tag-alert{background:var(--c-warning);color:#333}.tag-pending{background:var(--c-gray-mid);color:#333}
+.alert{padding:16px 20px;margin-bottom:16px;font-family:var(--fb);font-size:14px;border:1px solid;border-radius:0;display:flex;align-items:center;gap:12px}
+.alert-success{background:#e8f5e9;border-color:var(--c-success);color:#2e7d32}
+.alert-warning{background:#fff8e1;border-color:var(--c-warning);color:#f57f17}
+.alert-error{background:#ffebee;border-color:var(--c-danger);color:#c62828}
+.alert-info{background:#e3f2fd;border-color:var(--c-accent);color:#1565c0}
+.breadcrumb{font-family:var(--fb);font-size:13px;color:var(--c-gray-text);margin-bottom:24px}
+.breadcrumb a{color:var(--c-accent);text-decoration:none}
+.breadcrumb .sep{margin:0 8px;color:var(--c-gray-mid)}
+.stepper{display:flex;align-items:flex-start;justify-content:space-between;position:relative;margin:20px 0 40px}
+.stepper::before{content:'';position:absolute;top:20px;left:40px;right:40px;height:2px;background:var(--c-gray-mid)}
+.step{display:flex;flex-direction:column;align-items:center;position:relative;z-index:1;flex:1}
+.step-circle{width:40px;height:40px;border-radius:0;display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:700;font-size:14px;border:2px solid var(--c-gray-mid);background:var(--c-white);color:var(--c-gray-text);margin-bottom:12px}
+.step.active .step-circle{border-color:var(--c-accent);background:var(--c-accent);color:#fff}
+.step.done .step-circle{border-color:var(--c-success);background:var(--c-success);color:#fff}
+.step-title{font-family:var(--fb);font-size:13px;font-weight:600;color:var(--c-black);text-align:center}
+.step-desc{font-family:var(--fb);font-size:11px;color:var(--c-gray-text);text-align:center;margin-top:4px}
+.upload-zone{border:2px dashed var(--c-gray-mid);border-radius:0;padding:48px;text-align:center;cursor:pointer;transition:border-color .2s,background .2s}
+.upload-zone:hover{border-color:var(--c-accent);background:rgba(46,163,242,.04)}
+.upload-icon{font-size:48px;margin-bottom:12px;color:var(--c-gray-mid)}
+.upload-text{font-family:var(--fb);font-size:14px;color:var(--c-gray-text);margin-bottom:4px}
+.upload-hint{font-family:var(--fb);font-size:12px;color:var(--c-gray-mid)}
+.trust-row{display:flex;gap:32px;align-items:center;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:8px;font-family:var(--fb);font-size:14px;color:#333}
+.currency-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.currency-card{background:var(--c-white);box-shadow:var(--sh);padding:24px;border-radius:0}
+.currency-label{font-family:var(--fb);font-size:12px;color:var(--c-gray-text);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+.currency-value{font-family:var(--fh);font-size:2rem;font-weight:700;color:var(--c-black)}
+.currency-value.accent{color:var(--c-accent)}.currency-value.danger{color:var(--c-danger)}
+.currency-delta{font-family:var(--fb);font-size:12px;margin-top:4px}.currency-delta.up{color:var(--c-success)}.currency-delta.down{color:var(--c-danger)}
+.doc-header{background:var(--c-black);color:var(--c-white);padding:60px 0 50px}
+.doc-header h1{font-family:var(--fh);font-size:2.4rem;font-weight:700;letter-spacing:.03em;margin-bottom:8px}
+.doc-header p{font-family:var(--fb);font-size:14px;color:rgba(255,255,255,.55);letter-spacing:.05em}
+.doc-badge{display:inline-block;background:var(--c-accent);color:#fff;font-family:var(--fb);font-size:11px;font-weight:600;letter-spacing:.08em;padding:3px 10px;margin-bottom:16px;text-transform:uppercase}
+.token-table{width:100%;border-collapse:collapse;font-size:13px}
+.token-table th{font-family:var(--fb);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--c-gray-text);text-align:left;padding:8px 12px;border-bottom:2px solid var(--c-gray-mid)}
+.token-table td{padding:10px 12px;border-bottom:1px solid #f0f0f0;font-family:var(--fb);color:#333;vertical-align:middle}
+.token-table td code{font-family:monospace;font-size:12px;background:var(--c-bg);padding:2px 6px;color:var(--c-black)}
+@media(max-width:767px){.wrap{width:100%;padding:0 16px 60px}.palette-grid{grid-template-columns:repeat(2,1fr)}.cards-grid,.currency-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.type-h1{font-size:2rem}.type-h2{font-size:1.5rem}.layout-demo{flex-direction:column}.sidebar{width:100%}.stepper{flex-direction:column;gap:20px}.stepper::before{display:none}}
+</style>
+</head>
+<body>
+<div class="doc-header"><div class="wrap" style="padding-bottom:0"><span class="doc-badge">Design System</span><h1>Elan Zaak</h1><p>Guia de referencia UI - v2.0 - 2026</p></div></div>
+<div class="wrap">
+
+<!-- HEADER APP -->
+<div class="sec" style="margin-top:32px">
+<h2>Header de Aplicacion</h2>
+<div class="app-header">
+<div class="logo-ph">LOGO ELAN ZAAK</div>
+<div class="header-right">
+<span class="header-user">&#128100; Luis Mario Zepeda</span>
+<a href="#" class="header-logout">Cerrar sesion</a>
+</div>
+</div>
+</div>
+
+<!-- SIDEBAR -->
+<div class="sec">
+<h2>Sidebar</h2>
+<div class="layout-demo">
+<div class="sidebar">
+<div class="sidebar-title">Menu</div>
+<div class="sidebar-item active">Dashboard</div>
+<div class="sidebar-item">Proyectos</div>
+<div class="sidebar-item">Clientes</div>
+<div class="sidebar-item">Facturacion</div>
+<div class="sidebar-item">Reportes</div>
+<div class="sidebar-title" style="margin-top:16px">Configuracion</div>
+<div class="sidebar-item">Perfil</div>
+<div class="sidebar-item">Empresa</div>
+</div>
+<div class="main-content">
+<h3 style="font-family:var(--fh);font-size:1.2rem;font-weight:700;margin-bottom:12px">Dashboard</h3>
+<p style="font-family:var(--fb);font-size:14px;color:var(--c-gray-text);line-height:1.7">Contenido principal del area de trabajo. El sidebar usa fondo #f3f3f3 con el item activo indicado por border-left de 4px en #00639a.</p>
+</div>
+</div>
+</div>
+
+<!-- PALETA COMPLETA -->
+<div class="sec">
+<h2>Paleta de Colores</h2>
+<div class="palette-grid">
+<div class="swatch"><div class="swatch-color" style="background:#000"></div><div class="swatch-info"><span class="hex">#000000</span><span class="label">Primario / Texto</span></div></div>
+<div class="swatch"><div class="swatch-color" style="background:#fff;border:1px solid #e0e0e0"></div><div class="swatch-info"><span class="hex">#ffffff</span><span class="label">Fondo / Blanco</span></div></div>
+<div class="swatch"><div class="swatch-color" style="background:#2ea3f2"></div><div class="swatch-info"><span class="hex">#2ea3f2</span><span class="label">Acento / Azul</span></div></div>
+<div class="swatch"><div class="swatch-color" style="background:#ff6261"></div><div class="swatch-info"><span class="hex">#ff6261</span><span class="label">Peligro / Coral</span></div></div>
+<div class="swatch"><div class="swatch-color" style="background:#4CAF50"></div><div class="swatch-info"><span class="hex">#4CAF50</span><span class="label">Exito / Verde</span></div></div>
+<div class="swatch"><div class="swatch-color" style="background:#FFC107"></div><div class="swatch-info"><span class="hex">#FFC107</span><span class="label">Alerta / Amarillo</span></div></div>
+<div class="swatch"><div class="swatch-color" style="background:#00639a"></div><div class="swatch-info"><span class="hex">#00639a</span><span class="label">Navegacion / Navy</span></div></div>
+<div class="swatch"><div class="swatch-color" style="background:#f9f9f9;border:1px solid #e0e0e0"></div><div class="swatch-info"><span class="hex">#f9f9f9</span><span class="label">Fondo claro</span></div></div>
+</div>
+</div>
+
+<!-- TIPOGRAFIA -->
+<div class="sec">
+<h2>Tipografia</h2>
+<div class="type-ex"><span class="type-tag">Archivo 700 - H1</span><div class="type-h1">Soluciones financieras para la industria</div></div>
+<div class="type-ex"><span class="type-tag">Archivo 700 - H2</span><div class="type-h2">Nuestros servicios corporativos</div></div>
+<div class="type-ex"><span class="type-tag">Archivo 600 - H3</span><div class="type-h3">Gestion de activos industriales</div></div>
+<div class="type-ex"><span class="type-tag">Open Sans 400 - Body</span><div class="type-body">Elan Zaak ofrece soluciones especializadas para la industria siderurgica y metalica. Nuestro equipo acompana a empresas en cada etapa de su crecimiento.</div></div>
+<div class="type-ex"><span class="type-tag">Open Sans 600 - Label</span><div class="type-label">Numero de RFC / Identificador fiscal</div></div>
+<div class="type-ex"><span class="type-tag">Open Sans 400 - Small</span><div class="type-small">* Este campo es obligatorio para validar tu solicitud.</div></div>
+</div>
+
+<!-- BOTONES -->
+<div class="sec">
+<h2>Botones</h2>
+<div class="btn-row" style="margin-bottom:28px">
+<div class="btn-item"><a href="#" class="btn btn-primary">Primario</a><span class="btn-label">btn-primary</span></div>
+<div class="btn-item"><a href="#" class="btn btn-secondary">Secundario</a><span class="btn-label">btn-secondary</span></div>
+<div class="btn-item"><a href="#" class="btn btn-dark">Oscuro</a><span class="btn-label">btn-dark</span></div>
+<div class="btn-item"><a href="#" class="btn btn-danger">Peligro</a><span class="btn-label">btn-danger</span></div>
+<div class="btn-item"><span class="btn btn-disabled">Disabled</span><span class="btn-label">btn-disabled</span></div>
+</div>
+<div class="btn-row">
+<div class="btn-item"><a href="#" class="btn btn-primary btn-sm">Primario SM</a><span class="btn-label">Small</span></div>
+<div class="btn-item"><a href="#" class="btn btn-secondary btn-sm">Outline SM</a><span class="btn-label">Small</span></div>
+</div>
+</div>
+
+<!-- FORMULARIOS -->
+<div class="sec">
+<h2>Formularios / Inputs</h2>
+<form class="form-grid" onsubmit="return false">
+<div class="form-group"><label class="form-label">Razon social</label><input type="text" class="form-input" placeholder="Ej. Aceros del Norte S.A. de C.V."></div>
+<div class="form-group"><label class="form-label">RFC</label><input type="text" class="form-input" placeholder="Ej. ANO120101XYZ"><span class="form-hint">12 o 13 caracteres</span></div>
+<div class="form-group"><label class="form-label">Correo electronico</label><input type="email" class="form-input error" value="contacto@aceros"><span class="form-error">Ingresa un correo valido</span></div>
+<div class="form-group"><label class="form-label">Giro industrial</label><select class="form-select"><option value="">Selecciona una opcion</option><option>Siderurgia</option><option>Manufactura</option><option>Construccion</option><option>Energia</option></select></div>
+<div class="form-group" style="grid-column:1/-1"><label class="form-label">Descripcion del proyecto</label><textarea class="form-input" rows="4" placeholder="Describe brevemente tu necesidad..."></textarea></div>
+<div style="grid-column:1/-1" class="chk-group"><input type="checkbox" id="chk1"><label for="chk1">Acepto los terminos y condiciones</label></div>
+<div style="grid-column:1/-1" class="chk-group"><input type="checkbox" id="chk2" checked><label for="chk2">Enviar notificaciones por correo</label></div>
+<div style="grid-column:1/-1;display:flex;gap:12px"><button class="btn btn-primary">Enviar solicitud</button><button class="btn btn-secondary">Cancelar</button></div>
+</form>
+</div>
+
+<!-- TARJETAS -->
+<div class="sec">
+<h2>Tarjetas</h2>
+<div class="cards-grid">
+<div class="card card-accent"><svg class="card-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-3.75-.5m3.75.5l-.5 3.75"/></svg><h3>Analisis de credito</h3><p>Evaluacion integral de capacidad crediticia para empresas del sector industrial.</p></div>
+<div class="card"><svg class="card-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg><h3>Gestion de garantias</h3><p>Administracion de activos como garantia colateral con soporte legal.</p></div>
+<div class="card"><svg class="card-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5"/></svg><h3>Financiamiento</h3><p>Lineas de credito diseniadas para proyectos de infraestructura.</p></div>
+</div>
+</div>
+
+<!-- TABLA -->
+<div class="sec">
+<h2>Tabla</h2>
+<table class="ds-table">
+<thead><tr><th>Proyecto</th><th>Cliente</th><th>Monto</th><th>Estatus</th><th>Fecha</th></tr></thead>
+<tbody>
+<tr><td>Ampliacion Planta 3</td><td>Aceros del Norte</td><td>$12,450,000.00</td><td><span class="tag tag-progress">En progreso</span></td><td>15/03/2026</td></tr>
+<tr><td>Refacciones linea B</td><td>Siderurgica Monterrey</td><td>$3,200,000.00</td><td><span class="tag tag-complete">Completado</span></td><td>02/02/2026</td></tr>
+<tr><td>Instalacion horno</td><td>Metales del Golfo</td><td>$8,750,000.00</td><td><span class="tag tag-alert">Alerta</span></td><td>28/01/2026</td></tr>
+<tr><td>Estudio de suelo</td><td>Construcciones SA</td><td>$1,100,000.00</td><td><span class="tag tag-pending">Pendiente</span></td><td>10/01/2026</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- BADGES DE ESTATUS -->
+<div class="sec">
+<h2>Badges de Estatus</h2>
+<div class="badge-row">
+<span class="tag tag-progress">En progreso</span>
+<span class="tag tag-complete">Completado</span>
+<span class="tag tag-alert">Alerta</span>
+<span class="tag tag-pending">Pendiente</span>
+</div>
+</div>
+
+<!-- ALERTAS -->
+<div class="sec">
+<h2>Alertas / Mensajes</h2>
+<div class="alert alert-success"><span class="alert-icon">&#10004;</span> Operacion completada exitosamente. El proyecto fue actualizado.</div>
+<div class="alert alert-warning"><span class="alert-icon">&#9888;</span> Atencion: el plazo de entrega vence en 3 dias.</div>
+<div class="alert alert-error"><span class="alert-icon">&#10006;</span> Error al procesar la solicitud. Verifica los datos ingresados.</div>
+<div class="alert alert-info"><span class="alert-icon">&#8505;</span> Informacion: nuevo formato de facturas disponible a partir de abril.</div>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="sec">
+<h2>Breadcrumb</h2>
+<div class="breadcrumb"><a href="#">Grupo Elan Zaak</a><span class="sep">&gt;</span><a href="#">Aceros del Norte S.A.</a><span class="sep">&gt;</span><a href="#">Proyecto Planta 3</a><span class="sep">&gt;</span><span>Detalle</span></div>
+<div class="breadcrumb"><a href="#">Empresa</a><span class="sep">&gt;</span><a href="#">Proyectos</a><span class="sep">&gt;</span><span>Lista</span></div>
+</div>
+
+<!-- STEPPER / WIZARD -->
+<div class="sec">
+<h2>Stepper / Wizard (4 pasos - Anexo 9)</h2>
+<div class="stepper">
+<div class="step done"><div class="step-circle">&#10003;</div><div class="step-title">Datos generales</div><div class="step-desc">RFC, razon social</div></div>
+<div class="step done"><div class="step-circle">&#10003;</div><div class="step-title">Documentos</div><div class="step-desc">Acta, comprobante</div></div>
+<div class="step active"><div class="step-circle">3</div><div class="step-title">Validacion</div><div class="step-desc">Revision de info</div></div>
+<div class="step"><div class="step-circle">4</div><div class="step-title">Confirmacion</div><div class="step-desc">Firma y envio</div></div>
+</div>
+<div style="display:flex;gap:12px;margin-top:8px"><button class="btn btn-secondary btn-sm">Anterior</button><button class="btn btn-primary btn-sm">Siguiente paso</button></div>
+</div>
+
+<!-- UPLOAD ZONE -->
+<div class="sec">
+<h2>Zona de carga / Upload</h2>
+<div class="upload-zone" id="uploadZone">
+<div class="upload-icon">&#128193;</div>
+<div class="upload-text">Arrastra tus archivos aqui o haz clic para seleccionar</div>
+<div class="upload-hint">PDF, DOCX, XLSX - Maximo 10MB por archivo</div>
+</div>
+</div>
+
+<!-- INDICADORES DE CONFIANZA -->
+<div class="sec">
+<h2>Indicadores de Confianza</h2>
+<div class="trust-row">
+<div class="trust-item"><span class="trust-dot">&#128994;</span> Alta confianza - Documentacion completa</div>
+<div class="trust-item"><span class="trust-dot">&#128993;</span> Media confianza - Pendiente validacion</div>
+<div class="trust-item"><span class="trust-dot">&#128308;</span> Baja confianza - Requiere atencion</div>
+</div>
+</div>
+
+<!-- MONTOS / CANTIDADES -->
+<div class="sec">
+<h2>Montos y Cantidades</h2>
+<div class="currency-grid">
+<div class="currency-card"><div class="currency-label">Monto total del proyecto</div><div class="currency-value">$24,850,000.00</div><div class="currency-delta up">&#9650; 12.5% vs mes anterior</div></div>
+<div class="currency-card"><div class="currency-label">Saldo disponible</div><div class="currency-value accent">$8,320,500.00</div><div class="currency-delta up">&#9650; 3.2% vs mes anterior</div></div>
+<div class="currency-card"><div class="currency-label">Monto vencido</div><div class="currency-value danger">$1,450,000.00</div><div class="currency-delta down">&#9660; 8.1% vs mes anterior</div></div>
+</div>
+</div>
+
+<!-- TOKENS -->
+<div class="sec">
+<h2>Tokens de Diseno</h2>
+<table class="token-table">
+<thead><tr><th>Token</th><th>Valor</th><th>Uso</th></tr></thead>
+<tbody>
+<tr><td><code>--c-accent</code></td><td><code>#2ea3f2</code></td><td>Botones CTA, links activos</td></tr>
+<tr><td><code>--c-danger</code></td><td><code>#ff6261</code></td><td>Errores, alertas, urgencia</td></tr>
+<tr><td><code>--c-success</code></td><td><code>#4CAF50</code></td><td>Confirmaciones, completado</td></tr>
+<tr><td><code>--c-warning</code></td><td><code>#FFC107</code></td><td>Alertas, pendientes</td></tr>
+<tr><td><code>--c-navy</code></td><td><code>#00639a</code></td><td>Sidebar activo, navegacion</td></tr>
+<tr><td><code>border-radius</code></td><td><code>0px</code></td><td>TODOS los elementos</td></tr>
+<tr><td><code>--fh</code></td><td><code>Archivo 600-700</code></td><td>Headings, botones</td></tr>
+<tr><td><code>--fb</code></td><td><code>Open Sans 400-600</code></td><td>Body, formularios</td></tr>
+</tbody>
+</table>
+</div>
+
+</div><!-- /wrap -->
+
+<script>
+const uz = document.getElementById('uploadZone');
+if(uz){uz.addEventListener('dragover',e=>{e.preventDefault();uz.classList.add('dragover')});uz.addEventListener('dragleave',()=>uz.classList.remove('dragover'));uz.addEventListener('drop',e=>{e.preventDefault();uz.classList.remove('dragover')});}
+</script>
+</body>
+</html>
