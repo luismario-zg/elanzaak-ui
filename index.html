@@ -134,9 +134,9 @@ table.ds-table tr:hover td{background:var(--c-bg)}
 </div>
 </div>
 
-<!-- SIDEBAR -->
+<!-- SIDEBAR (Vista estatica) -->
 <div class="sec">
-<h2>Sidebar</h2>
+<h2>Sidebar — Vista Estatica (Desktop)</h2>
 <div class="layout-demo">
 <div class="sidebar">
 <div class="sidebar-title">Menu</div>
@@ -153,6 +153,134 @@ table.ds-table tr:hover td{background:var(--c-bg)}
 <h3 style="font-family:var(--fh);font-size:1.2rem;font-weight:700;margin-bottom:12px">Dashboard</h3>
 <p style="font-family:var(--fb);font-size:14px;color:var(--c-gray-text);line-height:1.7">Contenido principal del area de trabajo. El sidebar usa fondo #f3f3f3 con el item activo indicado por border-left de 4px en #00639a.</p>
 </div>
+</div>
+</div>
+
+<!-- SIDEBAR APP LAYOUT -->
+<div class="sec">
+<h2>Sidebar — App Layout Completo (con Responsive)</h2>
+<p style="font-size:14px;color:var(--c-gray-text);margin-bottom:20px;line-height:1.7">Implementacion completa del sidebar para la app. En desktop es fijo a la izquierda. En movil (&lt;768px) se oculta con <code style="font-family:monospace;font-size:12px;background:#f0f0f0;padding:2px 6px">transform:translateX(-100%)</code> y se abre con hamburger + overlay.</p>
+
+<!-- CSS de referencia -->
+<div style="background:#1a1a2e;color:#e0e0e0;padding:20px;font-family:monospace;font-size:12px;line-height:1.6;overflow-x:auto;margin-bottom:24px;border-radius:0"><pre style="margin:0">/* ── Layout base ── */
+.app { display:flex; min-height:100vh; }
+.sidebar {
+  width: 240px;
+  background: #f3f3f3;
+  border-right: 1px solid #e0e0e0;
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  transition: transform .25s ease;
+}
+.main {
+  margin-left: 240px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Sidebar interno ── */
+.sidebar-logo {
+  padding: 20px 24px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.sidebar-nav { flex:1; padding:16px 0; overflow-y:auto; }
+.sidebar-section {
+  font-family: 'Archivo', sans-serif;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: #555; padding: 12px 24px 8px;
+}
+.sidebar-link {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 14px; color: #555; padding: 10px 24px;
+  text-decoration: none; border-left: 4px solid transparent;
+  transition: all .15s;
+}
+.sidebar-link:hover  { background:#e9e9e9; color:#000; }
+.sidebar-link.active {
+  border-left-color: #00639a;
+  background: #fff; color: #000; font-weight: 600;
+}
+.sidebar-bottom { padding:16px 24px; border-top:1px solid #e0e0e0; }
+.sidebar-logout {
+  color: #ff6261; font-weight: 600;
+  text-decoration: none; font-size: 14px;
+}
+
+/* ── Hamburger (solo visible en movil) ── */
+.hamburger { display:none; background:none; border:none;
+  font-size:22px; cursor:pointer; padding:4px; }
+.overlay {
+  display:none; position:fixed; inset:0;
+  background:rgba(0,0,0,.35); z-index:90;
+}
+
+/* ── Responsive (CRITICO: la llave de cierre es obligatoria) ── */
+@media(max-width:767px) {
+  .sidebar { transform: translateX(-100%); }  /* ← } AQUI */
+  .sidebar.open { transform: translateX(0); }
+  .overlay.visible { display: block; }
+  .main { margin-left: 0; }
+  .hamburger { display: block; }
+}
+
+/* ── JS toggle ── */
+/* hamburger.addEventListener('click', () => {
+     sidebar.classList.toggle('open');
+     overlay.classList.toggle('visible');
+   });
+   overlay.addEventListener('click', () => {
+     sidebar.classList.remove('open');
+     overlay.classList.remove('visible');
+   }); */
+</pre></div>
+
+<!-- Estructura HTML -->
+<div style="background:#f8f8f8;padding:20px;font-family:monospace;font-size:12px;line-height:1.6;overflow-x:auto;margin-bottom:24px;border:1px solid #e0e0e0"><pre style="margin:0">&lt;div class="app"&gt;
+  &lt;!-- SIDEBAR --&gt;
+  &lt;aside class="sidebar" id="sidebar"&gt;
+    &lt;div class="sidebar-logo"&gt;
+      &lt;div class="brand"&gt;Elan &lt;span&gt;Zaak&lt;/span&gt;&lt;/div&gt;
+      &lt;div class="sub"&gt;CRM Precios de Transferencia&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;nav class="sidebar-nav"&gt;
+      &lt;div class="sidebar-section"&gt;Principal&lt;/div&gt;
+      &lt;a href="#" class="sidebar-link active"&gt;Dashboard&lt;/a&gt;
+      &lt;div class="sidebar-section"&gt;Gestion&lt;/div&gt;
+      &lt;a href="#" class="sidebar-link"&gt;Grupos Empresariales&lt;/a&gt;
+      &lt;a href="#" class="sidebar-link"&gt;Clientes&lt;/a&gt;
+      &lt;a href="#" class="sidebar-link"&gt;Proyectos&lt;/a&gt;
+      &lt;div class="sidebar-section"&gt;Herramientas&lt;/div&gt;
+      &lt;a href="#" class="sidebar-link"&gt;Generador Anexo 9&lt;/a&gt;
+      &lt;div class="sidebar-section"&gt;Sistema&lt;/div&gt;
+      &lt;a href="#" class="sidebar-link"&gt;Configuracion&lt;/a&gt;
+    &lt;/nav&gt;
+    &lt;div class="sidebar-bottom"&gt;
+      &lt;a href="#" class="sidebar-logout"&gt;Cerrar sesion&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/aside&gt;
+
+  &lt;!-- OVERLAY (solo movil) --&gt;
+  &lt;div class="overlay" id="overlay"&gt;&lt;/div&gt;
+
+  &lt;!-- MAIN --&gt;
+  &lt;div class="main"&gt;
+    &lt;header class="header"&gt;
+      &lt;button class="hamburger" id="hamburger"&gt;&amp;#9776;&lt;/button&gt;
+      &lt;!-- ...contenido del header... --&gt;
+    &lt;/header&gt;
+    &lt;div class="content"&gt;
+      &lt;!-- ...contenido de la pagina... --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></div>
+
+<div style="background:#fff8e1;border:1px solid #FFC107;padding:16px 20px;font-size:14px;color:#333;line-height:1.7">
+  <strong style="color:#f57f17">&#9888; Nota critica:</strong> En el <code style="font-family:monospace;font-size:12px;background:#fff;padding:2px 6px">@media</code> del sidebar, la regla <code style="font-family:monospace;font-size:12px;background:#fff;padding:2px 6px">.sidebar{transform:translateX(-100%)}</code> <strong>debe tener la llave de cierre <code>}</code></strong> antes de la siguiente regla. Si falta, Chrome y Safari ignoran todo el bloque @media y el sidebar queda visible siempre en movil.
 </div>
 </div>
 
