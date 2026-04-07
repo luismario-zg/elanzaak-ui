@@ -68,70 +68,51 @@ body{font-family:var(--fb);font-size:16px;color:var(--c-black);background:var(--
 .breadcrumb .sep{margin:0 8px;color:var(--c-gray-mid)}
 
 /* ── EMPRESA HEADER ── */
-.empresa-header{background:var(--c-white);box-shadow:var(--sh);padding:32px;margin-bottom:24px}
-.empresa-info{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:20px}
-.empresa-info-left h2{font-family:var(--fh);font-size:1.5rem;font-weight:700;color:var(--c-black);margin-bottom:4px}
-.empresa-info-left .rfc{font-size:14px;color:var(--c-gray-text);margin-bottom:12px}
-.empresa-meta{display:flex;gap:24px;flex-wrap:wrap}
-.empresa-meta .meta-item{display:flex;flex-direction:column;gap:2px}
-.empresa-meta .meta-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--c-gray-text)}
-.empresa-meta .meta-value{font-size:14px;color:var(--c-black);font-weight:600}
-.empresa-actions{display:flex;gap:12px;align-items:flex-start}
+.emp-header{background:var(--c-white);box-shadow:var(--sh);padding:32px;margin-bottom:24px}
+.emp-header-main{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap}
+.emp-info h2{font-family:var(--fh);font-size:1.5rem;font-weight:700;color:var(--c-black);margin-bottom:4px}
+.emp-info .rfc{font-size:13px;color:var(--c-gray-text);margin-bottom:12px}
+.emp-info .desc{font-size:14px;color:var(--c-gray-text);line-height:1.6;margin-bottom:16px;max-width:600px}
+.emp-meta{display:flex;gap:32px;flex-wrap:wrap}
+.emp-meta .meta-item{display:flex;flex-direction:column;gap:2px}
+.emp-meta .meta-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--c-gray-text)}
+.emp-meta .meta-value{font-size:14px;color:var(--c-black)}
+.emp-actions{display:flex;gap:12px;align-items:flex-start}
+
+/* ── BTN ── */
 .btn{font-family:var(--fh);font-size:14px;font-weight:600;padding:12px 28px;border-radius:0;cursor:pointer;letter-spacing:.04em;transition:background .2s,color .2s,border-color .2s;display:inline-flex;align-items:center;gap:8px;text-decoration:none;border:2px solid transparent}
 .btn-primary{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}.btn-primary:hover{background:#1a8fd4;border-color:#1a8fd4}
 .btn-secondary{background:transparent;color:var(--c-accent);border-color:var(--c-accent)}.btn-secondary:hover{background:var(--c-accent);color:#fff}
 
 /* ── TABS ── */
-.tabs-container{background:var(--c-white);box-shadow:var(--sh);margin-bottom:24px}
-.tabs-nav{display:flex;border-bottom:1px solid #e0e0e0;overflow-x:auto}
-.tab-btn{font-family:var(--fb);font-size:14px;font-weight:600;padding:16px 24px;background:none;border:none;color:var(--c-gray-text);cursor:pointer;position:relative;transition:color .2s;white-space:nowrap}
-.tab-btn:hover{color:var(--c-black)}
-.tab-btn.active{color:var(--c-accent)}
-.tab-btn.active::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--c-accent)}
-.tab-content{display:none;padding:24px}
+.tabs-wrap{background:var(--c-white);box-shadow:var(--sh);margin-bottom:24px}
+.tabs{display:flex;border-bottom:1px solid #e0e0e0;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tab{font-family:var(--fh);font-size:14px;font-weight:600;padding:16px 24px;color:var(--c-gray-text);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .2s}
+.tab:hover{color:var(--c-black);background:var(--c-bg)}
+.tab.active{color:var(--c-accent);border-bottom-color:var(--c-accent)}
+.tab-content{display:none;padding:28px}
 .tab-content.active{display:block}
 
-/* ── TABLA GENERAL ── */
-.data-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.data-section{background:var(--c-white);padding:24px;box-shadow:var(--sh)}
-.data-section h3{font-family:var(--fh);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--c-gray-text);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--c-gray-mid)}
-.data-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #f0f0f0}
-.data-row:last-child{border-bottom:none}
-.data-label{font-size:13px;color:var(--c-gray-text)}
-.data-value{font-size:14px;font-weight:600;color:var(--c-black)}
+/* ── INFO GRID ── */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.info-card{background:var(--c-bg);padding:20px;border:1px solid #e0e0e0}
+.info-card .card-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--c-gray-text);margin-bottom:8px}
+.info-card .card-value{font-size:15px;color:var(--c-black);line-height:1.5}
 
-/* ── TABLA CONTACTOS ── */
-.table-section{background:var(--c-white);box-shadow:var(--sh);padding:28px}
+/* ── TABLA ── */
+.table-section{background:var(--c-white);padding:28px}
 .table-section h3{font-family:var(--fh);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--c-gray-text);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--c-gray-mid)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
 table.ds-table{width:100%;border-collapse:collapse;font-size:14px}
 table.ds-table th{font-family:var(--fb);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--c-gray-text);text-align:left;padding:12px;border-bottom:2px solid var(--c-gray-mid)}
 table.ds-table td{padding:12px;border-bottom:1px solid #f0f0f0;font-family:var(--fb);color:#333}
 table.ds-table tr:hover td{background:var(--c-bg)}
+.table-link{color:var(--c-accent);text-decoration:none;font-weight:600}
+.table-link:hover{text-decoration:underline}
 .badge{font-family:var(--fb);font-size:12px;font-weight:600;padding:3px 10px;display:inline-block;border-radius:0;background:var(--c-bg);color:var(--c-gray-text);border:1px solid #e0e0e0}
 .badge-accent{background:rgba(46,163,242,.1);color:var(--c-accent);border-color:rgba(46,163,242,.2)}
-
-/* ── DOCUMENTOS ── */
-.doc-item{display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:1px solid #f0f0f0}
-.doc-item:last-child{border-bottom:none}
-.doc-info{display:flex;align-items:center;gap:16px}
-.doc-icon{width:40px;height:40px;background:var(--c-bg);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--c-accent)}
-.doc-name{font-weight:600;color:var(--c-black)}
-.doc-meta{font-size:12px;color:var(--c-gray-text)}
-.doc-actions{display:flex;gap:12px}
-.doc-link{color:var(--c-accent);text-decoration:none;font-size:13px;font-weight:600}
-.doc-link:hover{text-decoration:underline}
-
-/* ── PROYECTOS ── */
-.proyecto-item{display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:1px solid #f0f0f0}
-.proyecto-item:last-child{border-bottom:none}
-.proyecto-info{flex:1}
-.proyecto-name{font-weight:600;color:var(--c-black);text-decoration:none}
-.proyecto-name:hover{text-decoration:underline}
-.proyecto-meta{font-size:12px;color:var(--c-gray-text);margin-top:4px}
-.proyecto-badge{display:inline-block;padding:4px 10px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
-.proyecto-badge.activo{background:#e8f5e9;color:#2e7d32}
-.proyecto-badge.pendiente{background:#fff8e1;color:#f57f17}
+.badge-warning{background:rgba(255,193,7,.15);color:#b28704;border-color:rgba(255,193,7,.3)}
+.badge-success{background:rgba(76,175,80,.1);color:var(--c-success);border-color:rgba(76,175,80,.2)}
 
 /* ── RESPONSIVE ── */
 @media(max-width:767px){
@@ -143,11 +124,8 @@ table.ds-table tr:hover td{background:var(--c-bg)}
   .hamburger{display:block}
   .header{padding:0 16px}
   .content{padding:20px 16px}
-  .empresa-info{flex-direction:column}
-  .empresa-meta{gap:16px}
-  .data-grid{grid-template-columns:1fr}
-  .tabs-nav{flex-wrap:nowrap}
-  .tab-btn{padding:12px 16px;font-size:13px}
+  .emp-header-main{flex-direction:column}
+  .emp-meta{gap:16px}
 }
 </style>
 </head>
@@ -167,7 +145,7 @@ table.ds-table tr:hover td{background:var(--c-bg)}
         <span class="icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span> Dashboard
       </a>
       <div class="sidebar-section">Gestion</div>
-      <a href="grupos.html" class="sidebar-link active">
+      <a href="grupos.html" class="sidebar-link">
         <span class="icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></span> Grupos Empresariales
       </a>
       <a href="#" class="sidebar-link">
@@ -217,157 +195,108 @@ table.ds-table tr:hover td{background:var(--c-bg)}
       </div>
 
       <!-- EMPRESA HEADER -->
-      <div class="empresa-header">
-        <div class="empresa-info">
-          <div class="empresa-info-left">
+      <div class="emp-header">
+        <div class="emp-header-main">
+          <div class="emp-info">
             <h2>Metallic Building Company, S.A. de C.V.</h2>
             <p class="rfc">RFC: MBC950101AAA</p>
-            <div class="empresa-meta">
-              <div class="meta-item">
-                <span class="meta-label">Industria</span>
-                <span class="meta-value">Manufactura metalica</span>
-              </div>
+            <p class="desc">Empresa manufacturera dedicada a la fabricacion de estructuras metalicas para la industria de la construccion. Operaciones principales en el sector industrial de Puebla.</p>
+            <div class="emp-meta">
               <div class="meta-item">
                 <span class="meta-label">Pais</span>
                 <span class="meta-value">Mexico</span>
               </div>
               <div class="meta-item">
-                <span class="meta-label">Grupo</span>
-                <span class="meta-value">Grupo Metallic</span>
+                <span class="meta-label">Estado</span>
+                <span class="meta-value">Puebla</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Industria</span>
+                <span class="meta-value">Manufactura metalica</span>
               </div>
               <div class="meta-item">
                 <span class="meta-label">Estatus</span>
-                <span class="meta-value" style="color:var(--c-success)">Activo</span>
+                <span class="meta-value" style="color:var(--c-success);font-weight:600">Activo</span>
               </div>
             </div>
           </div>
-          <div class="empresa-actions">
+          <div class="emp-actions">
             <a href="#" class="btn btn-secondary">Editar</a>
           </div>
         </div>
       </div>
 
       <!-- TABS -->
-      <div class="tabs-container">
-        <div class="tabs-nav">
-          <button class="tab-btn active" data-tab="info">Info General</button>
-          <button class="tab-btn" data-tab="contactos">Contactos</button>
-          <button class="tab-btn" data-tab="documentos">Documentos</button>
-          <button class="tab-btn" data-tab="proyectos">Proyectos</button>
+      <div class="tabs-wrap">
+        <div class="tabs">
+          <div class="tab active" data-tab="general">Info General</div>
+          <div class="tab" data-tab="contactos">Contactos</div>
+          <div class="tab" data-tab="documentos">Documentos</div>
+          <div class="tab" data-tab="proyectos">Proyectos</div>
         </div>
 
         <!-- TAB: INFO GENERAL -->
-        <div class="tab-content active" id="tab-info">
-          <div class="data-grid">
-            <div class="data-section">
-              <h3>Datos Fiscales</h3>
-              <div class="data-row">
-                <span class="data-label">Razon Social</span>
-                <span class="data-value">Metallic Building Company, S.A. de C.V.</span>
-              </div>
-              <div class="data-row">
-                <span class="data-label">RFC</span>
-                <span class="data-value">MBC950101AAA</span>
-              </div>
-              <div class="data-row">
-                <span class="data-label">CURP</span>
-                <span class="data-value">MBC950101HDFTRL01</span>
-              </div>
-              <div class="data-row">
-                <span class="data-label">Direccion Fiscal</span>
-                <span class="data-value">Av. Industrial 1250, Monterrey, NL</span>
-              </div>
+        <div class="tab-content active" id="general">
+          <div class="info-grid">
+            <div class="info-card">
+              <div class="card-label">Direccion Fiscal</div>
+              <div class="card-value">Blvd. Industrial 4500, Colonia Industrial<br>Puebla, Puebla, C.P. 72300</div>
             </div>
-            <div class="data-section">
-              <h3>Informacion Legal</h3>
-              <div class="data-row">
-                <span class="data-label">Fecha de Constitucion</span>
-                <span class="data-value">15 de Enero de 1995</span>
-              </div>
-              <div class="data-row">
-                <span class="data-label">Objeto Social</span>
-                <span class="data-value">Fabricacion y comercializacion de estructuras metalicas</span>
-              </div>
-              <div class="data-row">
-                <span class="data-label"> Capital Social</span>
-                <span class="data-value">$25,000,000 MXN</span>
-              </div>
-              <div class="data-row">
-                <span class="data-label">Socio Mayoritario</span>
-                <span class="data-value">Grupo Metallic Holding, S.A. de C.V.</span>
-              </div>
+            <div class="info-card">
+              <div class="card-label">Direccion Operativa</div>
+              <div class="card-value">Carretera Federal Puebla-Atlixco Km 8.5<br>Puebla, Puebla, C.P. 74380</div>
             </div>
-            <div class="data-section">
-              <h3>Datos de Contacto</h3>
-              <div class="data-row">
-                <span class="data-label">Correo electronico</span>
-                <span class="data-value">contacto@metallic.com.mx</span>
-              </div>
-              <div class="data-row">
-                <span class="data-label">Telefono</span>
-                <span class="data-value">+52 (81) 8123 4567</span>
-              </div>
-              <div class="data-row">
-                <span class="data-label">Sitio web</span>
-                <span class="data-value">www.metallic.com.mx</span>
-              </div>
+            <div class="info-card">
+              <div class="card-label">Datos Fiscales</div>
+              <div class="card-value">Regimen: Persona Moral Moral<br>Tipo: SA de CV</div>
             </div>
-            <div class="data-section">
-              <h3>Informacion Financiera (2025)</h3>
-              <div class="data-row">
-                <span class="data-label">Ingresos Anuales</span>
-                <span class="data-value">$180,000,000 MXN</span>
-              </div>
-              <div class="data-row">
-                <span class="data-label"> Activo Total</span>
-                <span class="data-value">$95,000,000 MXN</span>
-              </div>
-              <div class="data-row">
-                <span class="data-label">Utilidad Operativa</span>
-                <span class="data-value">$22,000,000 MXN</span>
-              </div>
+            <div class="info-card">
+              <div class="card-label">Grupo Empresario</div>
+              <div class="card-value"><a href="grupo-detalle.html" class="table-link">Grupo Metallic</a></div>
+            </div>
+            <div class="info-card">
+              <div class="card-label">Socio Asignado</div>
+              <div class="card-value">Carlos Gonzalez</div>
+            </div>
+            <div class="info-card">
+              <div class="card-label">Sector Economico</div>
+              <div class="card-value">Sector Secundario / Manufactura</div>
             </div>
           </div>
         </div>
 
         <!-- TAB: CONTACTOS -->
-        <div class="tab-content" id="tab-contactos">
-          <div class="table-section">
+        <div class="tab-content" id="contactos">
+          <div class="table-section" style="box-shadow:none;padding:0">
             <h3>Contactos de la Empresa</h3>
             <div class="table-wrap">
               <table class="ds-table">
                 <thead>
                   <tr>
                     <th>Nombre</th>
-                    <th>Puesto</th>
-                    <th>Correo</th>
+                    <th>Cargo</th>
+                    <th>Email</th>
                     <th>Telefono</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><strong>Ing. Ricardo Martinez</strong></td>
+                    <td>Ing. Roberto Hernandez</td>
                     <td>Director General</td>
-                    <td>rmartinez@metallic.com.mx</td>
-                    <td>+52 (81) 8123 4567</td>
+                    <td>r.hernandez@metallic.com.mx</td>
+                    <td>+52 222 123 4567</td>
                   </tr>
                   <tr>
-                    <td><strong>CPA Laura Gonzalez</strong></td>
-                    <td>Directora de Finanzas</td>
-                    <td>lgonzalez@metallic.com.mx</td>
-                    <td>+52 (81) 8123 4568</td>
+                    <td>C.P. Maria Lopez</td>
+                    <td>Director de Finanzas</td>
+                    <td>m.lopez@metallic.com.mx</td>
+                    <td>+52 222 123 4568</td>
                   </tr>
                   <tr>
-                    <td><strong>Lic. Ana Maria Torres</strong></td>
-                    <td>Responsable de Precios de Transferencia</td>
-                    <td>atorres@metallic.com.mx</td>
-                    <td>+52 (81) 8123 4569</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Ing. Carlos Ramirez</strong></td>
-                    <td>Gerente de Operaciones</td>
-                    <td>cramirez@metallic.com.mx</td>
-                    <td>+52 (81) 8123 4570</td>
+                    <td>Lic. Ana Patel</td>
+                    <td>Legal / Compliance</td>
+                    <td>a.patel@metallic.com.mx</td>
+                    <td>+52 222 123 4569</td>
                   </tr>
                 </tbody>
               </table>
@@ -376,87 +305,92 @@ table.ds-table tr:hover td{background:var(--c-bg)}
         </div>
 
         <!-- TAB: DOCUMENTOS -->
-        <div class="tab-content" id="tab-documentos">
-          <div class="table-section">
-            <h3>Documentos de la Empresa</h3>
-            <div class="doc-item">
-              <div class="doc-info">
-                <div class="doc-icon">📄</div>
-                <div>
-                  <div class="doc-name">Contrato social.pdf</div>
-                  <div class="doc-meta">Actualizado: 15/Ene/2025</div>
-                </div>
-              </div>
-              <div class="doc-actions">
-                <a href="#" class="doc-link">Descargar</a>
-              </div>
-            </div>
-            <div class="doc-item">
-              <div class="doc-info">
-                <div class="doc-icon">📄</div>
-                <div>
-                  <div class="doc-name">Estados financieros 2025.pdf</div>
-                  <div class="doc-meta">Actualizado: 31/Mar/2026</div>
-                </div>
-              </div>
-              <div class="doc-actions">
-                <a href="#" class="doc-link">Descargar</a>
-              </div>
-            </div>
-            <div class="doc-item">
-              <div class="doc-info">
-                <div class="doc-icon">📄</div>
-                <div>
-                  <div class="doc-name">Informe de precios de transferencia 2025.pdf</div>
-                  <div class="doc-meta">Actualizado: 28/Feb/2026</div>
-                </div>
-              </div>
-              <div class="doc-actions">
-                <a href="#" class="doc-link">Descargar</a>
-              </div>
-            </div>
-            <div class="doc-item">
-              <div class="doc-info">
-                <div class="doc-icon">📄</div>
-                <div>
-                  <div class="doc-name">Actas de asamblea.pdf</div>
-                  <div class="doc-meta">Actualizado: 10/Dic/2025</div>
-                </div>
-              </div>
-              <div class="doc-actions">
-                <a href="#" class="doc-link">Descargar</a>
-              </div>
+        <div class="tab-content" id="documentos">
+          <div class="table-section" style="box-shadow:none;padding:0">
+            <h3>Documentos Adjuntos</h3>
+            <div class="table-wrap">
+              <table class="ds-table">
+                <thead>
+                  <tr>
+                    <th>Documento</th>
+                    <th>Tipo</th>
+                    <th>Fecha</th>
+                    <th>Estatus</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="#" class="table-link">Acta Constitutiva.pdf</a></td>
+                    <td>Legal</td>
+                    <td>15/01/2015</td>
+                    <td><span class="badge badge-success">Vigente</span></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" class="table-link">Powers of Attorney.pdf</a></td>
+                    <td>Legal</td>
+                    <td>01/03/2024</td>
+                    <td><span class="badge badge-success">Vigente</span></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" class="table-link">Estudio de precios de transferencia 2024.pdf</a></td>
+                    <td>TP</td>
+                    <td>15/06/2024</td>
+                    <td><span class="badge badge-success">Vigente</span></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" class="table-link">Declaracion anual 2024.pdf</a></td>
+                    <td>Contable</td>
+                    <td>30/04/2025</td>
+                    <td><span class="badge badge-warning">Pendiente</span></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
 
         <!-- TAB: PROYECTOS -->
-        <div class="tab-content" id="tab-proyectos">
-          <div class="table-section">
+        <div class="tab-content" id="proyectos">
+          <div class="table-section" style="box-shadow:none;padding:0">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
-              <h3 style="margin-bottom:0;padding-bottom:0;border-bottom:none">Proyectos de la Empresa</h3>
+              <h3 style="margin-bottom:0;padding-bottom:0;border-bottom:none">Proyectos Activos</h3>
               <a href="#" class="btn btn-primary">+ Nuevo Proyecto</a>
             </div>
-            <div class="proyecto-item">
-              <div class="proyecto-info">
-                <a href="#" class="proyecto-name">Estudio de Precios de Transferencia 2025</a>
-                <div class="proyecto-meta">Fecha inicio: 01/Ene/2025 | Fecha fin: 31/Mar/2026</div>
-              </div>
-              <span class="proyecto-badge activo">Activo</span>
-            </div>
-            <div class="proyecto-item">
-              <div class="proyecto-info">
-                <a href="#" class="proyecto-name">Analisis de Operaciones Logisticas</a>
-                <div class="proyecto-meta">Fecha inicio: 15/Feb/2025 | Fecha fin: 30/Jun/2026</div>
-              </div>
-              <span class="proyecto-badge activo">Activo</span>
-            </div>
-            <div class="proyecto-item">
-              <div class="proyecto-info">
-                <a href="#" class="proyecto-name">Revision de Precios de Venta Intragrupo</a>
-                <div class="proyecto-meta">Fecha inicio: 01/Mar/2025 | Fecha fin: 30/Sep/2026</div>
-              </div>
-              <span class="proyecto-badge pendiente">Pendiente</span>
+            <div class="table-wrap">
+              <table class="ds-table">
+                <thead>
+                  <tr>
+                    <th>Proyecto</th>
+                    <th>Tipo de Servicio</th>
+                    <th>Ejercicio</th>
+                    <th>Estatus</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="#" class="table-link">Estudio de Precios de Transferencia 2025</a></td>
+                    <td>Estudio TP</td>
+                    <td>2025</td>
+                    <td><span class="badge badge-accent">En Proceso</span></td>
+                    <td><a href="#" class="table-link">Ver</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" class="table-link">Declaracion Operaciones Internas 2024</a></td>
+                    <td>DOI</td>
+                    <td>2024</td>
+                    <td><span class="badge badge-success">Completado</span></td>
+                    <td><a href="#" class="table-link">Ver</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" class="table-link">Benchmarking Sector Manufactura 2024</a></td>
+                    <td>Benchmarking</td>
+                    <td>2024</td>
+                    <td><span class="badge badge-success">Completado</span></td>
+                    <td><a href="#" class="table-link">Ver</a></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -480,6 +414,7 @@ overlay.addEventListener('click', () => {
   sidebar.classList.remove('open');
   overlay.classList.remove('visible');
 });
+
 const searchToggle = document.getElementById('searchToggle');
 const searchExpand = document.getElementById('searchExpand');
 const searchInputEl = document.getElementById('searchInput');
@@ -493,15 +428,23 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// Tabs
-const tabBtns = document.querySelectorAll('.tab-btn');
+// TABS LOGIC
+const tabs = document.querySelectorAll('.tab');
 const tabContents = document.querySelectorAll('.tab-content');
-tabBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    tabBtns.forEach(b => b.classList.remove('active'));
-    tabContents.forEach(c => c.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = tab.dataset.tab;
+    
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    
+    tabContents.forEach(content => {
+      content.classList.remove('active');
+      if (content.id === target) {
+        content.classList.add('active');
+      }
+    });
   });
 });
 </script>
