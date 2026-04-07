@@ -229,14 +229,14 @@ table.ds-table tr:hover td{background:var(--c-bg)}
       <!-- TABS -->
       <div class="tabs-wrap">
         <div class="tabs">
-          <div class="tab active" data-tab="general">Info General</div>
-          <div class="tab" data-tab="contactos">Contactos</div>
+          <div class="tab active" data-tab="proyectos">Proyectos</div>
           <div class="tab" data-tab="documentos">Documentos</div>
-          <div class="tab" data-tab="proyectos">Proyectos</div>
+          <div class="tab" data-tab="general">Info General</div>
+          <div class="tab" data-tab="contactos">Contactos</div>
         </div>
 
         <!-- TAB: INFO GENERAL -->
-        <div class="tab-content active" id="general">
+        <div class="tab-content" id="general">
           <div class="info-grid">
             <div class="info-card">
               <div class="card-label">Direccion Fiscal</div>
@@ -350,7 +350,7 @@ table.ds-table tr:hover td{background:var(--c-bg)}
         </div>
 
         <!-- TAB: PROYECTOS -->
-        <div class="tab-content" id="proyectos">
+        <div class="tab-content active" id="proyectos">
           <div class="table-section" style="box-shadow:none;padding:0">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
               <h3 style="margin-bottom:0;padding-bottom:0;border-bottom:none">Proyectos Activos</h3>
@@ -363,8 +363,9 @@ table.ds-table tr:hover td{background:var(--c-bg)}
                     <th>Proyecto</th>
                     <th>Tipo de Servicio</th>
                     <th>Ejercicio</th>
+                    <th>Progreso</th>
+                    <th>Docs Cliente</th>
                     <th>Estatus</th>
-                    <th>Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -372,22 +373,25 @@ table.ds-table tr:hover td{background:var(--c-bg)}
                     <td><a href="#" class="table-link">Estudio de Precios de Transferencia 2025</a></td>
                     <td>Estudio TP</td>
                     <td>2025</td>
+                    <td>75%</td>
+                    <td>10/25 enviados</td>
                     <td><span class="badge badge-accent">En Proceso</span></td>
-                    <td><a href="#" class="table-link">Ver</a></td>
                   </tr>
                   <tr>
                     <td><a href="#" class="table-link">Declaracion Operaciones Internas 2024</a></td>
                     <td>DOI</td>
                     <td>2024</td>
+                    <td>100%</td>
+                    <td>25/25 enviados</td>
                     <td><span class="badge badge-success">Completado</span></td>
-                    <td><a href="#" class="table-link">Ver</a></td>
                   </tr>
                   <tr>
                     <td><a href="#" class="table-link">Benchmarking Sector Manufactura 2024</a></td>
                     <td>Benchmarking</td>
                     <td>2024</td>
+                    <td>100%</td>
+                    <td>18/18 enviados</td>
                     <td><span class="badge badge-success">Completado</span></td>
-                    <td><a href="#" class="table-link">Ver</a></td>
                   </tr>
                 </tbody>
               </table>
