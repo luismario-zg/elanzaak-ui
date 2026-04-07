@@ -6,7 +6,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>Elan Zaak — Dashboard</title>
+<title>Elan Zaak — Grupo Metallic</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -41,13 +41,12 @@ body{font-family:var(--fb);font-size:16px;color:var(--c-black);background:var(--
 .sidebar-link.active{border-left-color:var(--c-navy);background:var(--c-white);color:var(--c-black);font-weight:600}
 .sidebar-link .icon{width:18px;text-align:center;font-size:15px}
 .sidebar-bottom{padding:16px 24px;border-top:1px solid #e0e0e0}
-.sidebar-logout{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--c-danger);text-decoration:none;font-weight:600;padding:8px 0}
+.sidebar-logout{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--c-danger);text-decoration:none;font-weight:600}
 .sidebar-logout:hover{text-decoration:underline}
 
 /* ── HEADER ── */
 .header-left{display:flex;align-items:center;gap:16px}
 .header-left h1{font-family:var(--fh);font-size:1.1rem;font-weight:700;color:var(--c-black)}
-.header-breadcrumb{font-size:13px;color:var(--c-gray-text)}
 .header-center{flex:1;display:flex;justify-content:center;padding:0 24px}
 .global-search{display:flex;align-items:center;gap:8px;background:var(--c-bg);border:1px solid #e0e0e0;padding:8px 16px;width:100%;max-width:480px;transition:border-color .2s}
 .global-search:focus-within{border-color:var(--c-accent);background:var(--c-white)}
@@ -56,48 +55,42 @@ body{font-family:var(--fb);font-size:16px;color:var(--c-black);background:var(--
 .global-search .search-icon{color:var(--c-gray-text);font-size:13px}
 .header-right{display:flex;align-items:center;gap:16px}
 .header-avatar{width:32px;height:32px;border-radius:0;background:var(--c-navy);color:var(--c-white);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:13px;font-weight:700}
-.btn-logout{font-family:var(--fb);font-size:13px;color:var(--c-danger);text-decoration:none;font-weight:600}
-.btn-logout:hover{text-decoration:underline}
 
 /* ── HAMBURGER ── */
 .hamburger{display:none;background:none;border:none;font-size:22px;cursor:pointer;color:var(--c-black);padding:4px}
 .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:90}
 
-/* ── CARDS RESUMEN ── */
-.summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:32px}
-.summary-card{background:var(--c-white);box-shadow:var(--sh);padding:28px}
-.summary-card .label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--c-gray-text);margin-bottom:8px}
-.summary-card .value{font-family:var(--fh);font-size:2.4rem;font-weight:700;color:var(--c-black);line-height:1}
-.summary-card .delta{font-size:12px;margin-top:8px}
-.summary-card .delta.up{color:var(--c-success)}
-.summary-card .accent{color:var(--c-accent)}
-.summary-card .warning{color:var(--c-warning)}
-.summary-card .bar{height:4px;background:var(--c-bg);margin-top:14px;border-radius:0}
-.summary-card .bar-fill{height:100%;border-radius:0}
+/* ── BREADCRUMB ── */
+.breadcrumb{font-size:13px;color:var(--c-gray-text);margin-bottom:24px}
+.breadcrumb a{color:var(--c-accent);text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.breadcrumb .sep{margin:0 8px;color:var(--c-gray-mid)}
 
-/* ── ACCIONES RAPIDAS ── */
-.actions-row{display:flex;gap:12px;margin-bottom:32px;flex-wrap:wrap}
+/* ── GROUP HEADER ── */
+.group-header{background:var(--c-white);box-shadow:var(--sh);padding:32px;margin-bottom:24px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:20px}
+.group-info h2{font-family:var(--fh);font-size:1.5rem;font-weight:700;color:var(--c-black);margin-bottom:4px}
+.group-info .desc{font-size:14px;color:var(--c-gray-text);margin-bottom:12px;line-height:1.6}
+.group-meta{display:flex;gap:24px;flex-wrap:wrap}
+.group-meta .meta-item{display:flex;flex-direction:column;gap:2px}
+.group-meta .meta-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--c-gray-text)}
+.group-meta .meta-value{font-size:14px;color:var(--c-black);font-weight:600}
+.group-actions{display:flex;gap:12px;align-items:flex-start}
 .btn{font-family:var(--fh);font-size:14px;font-weight:600;padding:12px 28px;border-radius:0;cursor:pointer;letter-spacing:.04em;transition:background .2s,color .2s,border-color .2s;display:inline-flex;align-items:center;gap:8px;text-decoration:none;border:2px solid transparent}
 .btn-primary{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}.btn-primary:hover{background:#1a8fd4;border-color:#1a8fd4}
 .btn-secondary{background:transparent;color:var(--c-accent);border-color:var(--c-accent)}.btn-secondary:hover{background:var(--c-accent);color:#fff}
 
-/* ── TABLA PROYECTOS ── */
+/* ── TABLA EMPRESAS ── */
 .table-section{background:var(--c-white);box-shadow:var(--sh);padding:28px}
-.table-section h2{font-family:var(--fh);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--c-gray-text);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--c-gray-mid)}
+.table-section h3{font-family:var(--fh);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--c-gray-text);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--c-gray-mid)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-table.ds-table{width:100%;border-collapse:collapse;font-size:14px;min-width:700px}
+table.ds-table{width:100%;border-collapse:collapse;font-size:14px}
 table.ds-table th{font-family:var(--fb);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--c-gray-text);text-align:left;padding:12px;border-bottom:2px solid var(--c-gray-mid)}
 table.ds-table td{padding:12px;border-bottom:1px solid #f0f0f0;font-family:var(--fb);color:#333}
 table.ds-table tr:hover td{background:var(--c-bg)}
-.tag{font-family:var(--fb);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;display:inline-block;border-radius:0}
-.tag-progress{background:var(--c-accent);color:#fff}
-.tag-complete{background:var(--c-success);color:#fff}
-.tag-alert{background:var(--c-warning);color:#333}
-.tag-pending{background:var(--c-gray-mid);color:#333}
-.tag-review{background:var(--c-navy);color:#fff}
 .table-link{color:var(--c-accent);text-decoration:none;font-weight:600}
 .table-link:hover{text-decoration:underline}
-.empty-state{text-align:center;padding:48px 20px;color:var(--c-gray-text);font-size:14px}
+.badge{font-family:var(--fb);font-size:12px;font-weight:600;padding:3px 10px;display:inline-block;border-radius:0;background:var(--c-bg);color:var(--c-gray-text);border:1px solid #e0e0e0}
+.badge-accent{background:rgba(46,163,242,.1);color:var(--c-accent);border-color:rgba(46,163,242,.2)}
 
 /* ── RESPONSIVE ── */
 @media(max-width:767px){
@@ -111,11 +104,8 @@ table.ds-table tr:hover td{background:var(--c-bg)}
   .header-center{order:3;width:100%;padding:8px 0 12px;justify-content:stretch}
   .global-search{max-width:none}
   .content{padding:20px 16px}
-  .summary-grid{grid-template-columns:1fr}
-  .summary-card .value{font-size:1.8rem}
-  .actions-row{flex-direction:column}
-  .actions-row .btn{width:100%;justify-content:center}
-  .header-breadcrumb{display:none}
+  .group-header{flex-direction:column}
+  .group-meta{gap:16px}
 }
 </style>
 </head>
@@ -131,11 +121,11 @@ table.ds-table tr:hover td{background:var(--c-bg)}
     </div>
     <nav class="sidebar-nav">
       <div class="sidebar-section">Principal</div>
-      <a href="dashboard.html" class="sidebar-link active">
+      <a href="dashboard.html" class="sidebar-link">
         <span class="icon">&#9632;</span> Dashboard
       </a>
       <div class="sidebar-section">Gestion</div>
-      <a href="grupos.html" class="sidebar-link">
+      <a href="grupos.html" class="sidebar-link active">
         <span class="icon">&#9776;</span> Grupos Empresariales
       </a>
       <a href="#" class="sidebar-link">
@@ -176,134 +166,78 @@ table.ds-table tr:hover td{background:var(--c-bg)}
     <!-- CONTENT -->
     <div class="content">
 
-      <!-- SALUDO -->
-      <p style="font-size:15px;color:var(--c-gray-text);margin-bottom:24px">
-        Bienvenido, <strong style="color:var(--c-black)">Gerente EZ</strong> &mdash; lunes 6 de abril, 2026
-      </p>
+      <!-- BREADCRUMB -->
+      <div class="breadcrumb">
+        <a href="grupos.html">Grupos Empresariales</a>
+        <span class="sep">&gt;</span>
+        <span>Grupo Metallic</span>
+      </div>
 
-      <!-- TARJETAS RESUMEN -->
-      <div class="summary-grid">
-        <div class="summary-card">
-          <div class="label">Grupos Activos</div>
-          <div class="value accent">5</div>
-          <div class="delta up">&#9650; 1 nuevo este mes</div>
-          <div class="bar"><div class="bar-fill" style="width:62%;background:var(--c-accent)"></div></div>
+      <!-- GROUP HEADER -->
+      <div class="group-header">
+        <div class="group-info">
+          <h2>Grupo Metallic</h2>
+          <p class="desc">Holding de empresas del sector manufactura metalica. Operaciones en Mexico y Estados Unidos con enfoque en construccion industrial.</p>
+          <div class="group-meta">
+            <div class="meta-item">
+              <span class="meta-label">Pais</span>
+              <span class="meta-value">Mexico</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Socio Asignado</span>
+              <span class="meta-value">Carlos</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Empresas</span>
+              <span class="meta-value">8</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Proyectos Activos</span>
+              <span class="meta-value">6</span>
+            </div>
+          </div>
         </div>
-        <div class="summary-card">
-          <div class="label">Proyectos en Progreso</div>
-          <div class="value">12</div>
-          <div class="delta up">&#9650; 3 esta semana</div>
-          <div class="bar"><div class="bar-fill" style="width:78%;background:var(--c-navy)"></div></div>
-        </div>
-        <div class="summary-card">
-          <div class="label">Alertas Pendientes</div>
-          <div class="value" style="color:var(--c-warning)">3</div>
-          <div class="delta" style="color:var(--c-danger)">&#9660; 2 vencen pronto</div>
-          <div class="bar"><div class="bar-fill" style="width:30%;background:var(--c-warning)"></div></div>
+        <div class="group-actions">
+          <a href="#" class="btn btn-primary">+ Agregar Empresa</a>
+          <a href="#" class="btn btn-secondary">Editar</a>
         </div>
       </div>
 
-      <!-- ACCIONES RAPIDAS -->
-      <div class="actions-row">
-        <a href="#" class="btn btn-primary">+ Nuevo Grupo</a>
-        <a href="#" class="btn btn-secondary">+ Nuevo Proyecto</a>
-      </div>
-
-      <!-- TABLA PROYECTOS RECIENTES -->
+      <!-- TABLA EMPRESAS -->
       <div class="table-section">
-        <h2>Proyectos Recientes</h2>
+        <h3>Empresas del Grupo</h3>
         <div class="table-wrap">
           <table class="ds-table">
             <thead>
               <tr>
-                <th>Grupo Empresarial</th>
-                <th>Empresa</th>
-                <th>Proyecto</th>
-                <th>Ejercicio</th>
+                <th>Razon Social</th>
+                <th>RFC</th>
+                <th>Industria</th>
+                <th>Proyectos Activos</th>
                 <th>Estatus</th>
-                <th>Ultimo Anexo 9</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><a href="#" class="table-link">Grupo Metallic</a></td>
-                <td>Metallic Building Company, S.A. de C.V.</td>
-                <td>Local File FY2025</td>
-                <td>2025</td>
-                <td><span class="tag tag-progress">En progreso</span></td>
-                <td>15/03/2026</td>
+                <td><a href="empresa-detalle.html" class="table-link">Metallic Building Company, S.A. de C.V.</a></td>
+                <td>MBC950101AAA</td>
+                <td>Manufactura metalica</td>
+                <td><span class="badge badge-accent">3</span></td>
+                <td><span style="color:var(--c-success);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em">&#9679; Activo</span></td>
               </tr>
               <tr>
-                <td><a href="#" class="table-link">Grupo Metallic</a></td>
-                <td>Metallic Building Company, S.A. de C.V.</td>
-                <td>Master File FY2024</td>
-                <td>2024</td>
-                <td><span class="tag tag-complete">Completado</span></td>
-                <td>02/01/2026</td>
+                <td><a href="empresa-detalle.html" class="table-link">Metallic Components del Norte, S.A. de C.V.</a></td>
+                <td>MCN020315BBB</td>
+                <td>Componentes industriales</td>
+                <td><span class="badge badge-accent">2</span></td>
+                <td><span style="color:var(--c-success);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em">&#9679; Activo</span></td>
               </tr>
               <tr>
-                <td><a href="#" class="table-link">Barrett Group</a></td>
-                <td>Barrett Business Services, Inc.</td>
-                <td>PT Study Mexico 2025</td>
-                <td>2025</td>
-                <td><span class="tag tag-review">En revision</span></td>
-                <td>Sin generar</td>
-              </tr>
-              <tr>
-                <td><a href="#" class="table-link">Deacero</a></td>
-                <td>Deacero, S.A. de C.V.</td>
-                <td>Local File Deacero FY2024</td>
-                <td>2024</td>
-                <td><span class="tag tag-complete">Completado</span></td>
-                <td>28/02/2026</td>
-              </tr>
-              <tr>
-                <td><a href="#" class="table-link">Cruz Azul</a></td>
-                <td>Cementos Cruz Azul, S.C.L.</td>
-                <td>Anexo 9 CIQ Manufactura 2024</td>
-                <td>2024</td>
-                <td><span class="tag tag-alert">Alerta</span></td>
-                <td>10/03/2026</td>
-              </tr>
-              <tr>
-                <td><a href="#" class="table-link">Grupo La Loma</a></td>
-                <td>Grupo La Loma, S.A. de C.V.</td>
-                <td>RQI PT 2024</td>
-                <td>2024</td>
-                <td><span class="tag tag-complete">Completado</span></td>
-                <td>22/01/2026</td>
-              </tr>
-              <tr>
-                <td><a href="#" class="table-link">Grupo Stiva</a></td>
-                <td>Grupo Stiva, S.A. de C.V.</td>
-                <td>Cuadro de Operaciones 2025</td>
-                <td>2025</td>
-                <td><span class="tag tag-progress">En progreso</span></td>
-                <td>Sin generar</td>
-              </tr>
-              <tr>
-                <td><a href="#" class="table-link">Segoso</a></td>
-                <td>Segoso Servicios, S.A. de C.V.</td>
-                <td>Call Center PT 2025</td>
-                <td>2025</td>
-                <td><span class="tag tag-pending">Pendiente</span></td>
-                <td>Sin generar</td>
-              </tr>
-              <tr>
-                <td><a href="#" class="table-link">Next Sierra</a></td>
-                <td>Next Sierra, S.A. de C.V.</td>
-                <td>Requerimiento de Informacion</td>
-                <td>2025</td>
-                <td><span class="tag tag-progress">En progreso</span></td>
-                <td>Sin generar</td>
-              </tr>
-              <tr>
-                <td><a href="#" class="table-link">Procesa</a></td>
-                <td>Procesa Industrial, S.A. de C.V.</td>
-                <td>DIL Procesa 2024</td>
-                <td>2024</td>
-                <td><span class="tag tag-pending">Pendiente</span></td>
-                <td>Sin generar</td>
+                <td><a href="empresa-detalle.html" class="table-link">Metallic Logistics, S.A. de C.V.</a></td>
+                <td>MLO080720CCC</td>
+                <td>Logistica y distribucion</td>
+                <td><span class="badge badge-accent">1</span></td>
+                <td><span style="color:var(--c-success);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em">&#9679; Activo</span></td>
               </tr>
             </tbody>
           </table>

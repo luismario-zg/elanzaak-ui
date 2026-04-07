@@ -47,6 +47,12 @@ body{font-family:var(--fb);font-size:16px;color:var(--c-black);background:var(--
 /* ── HEADER ── */
 .header-left{display:flex;align-items:center;gap:16px}
 .header-left h1{font-family:var(--fh);font-size:1.1rem;font-weight:700;color:var(--c-black)}
+.header-center{flex:1;display:flex;justify-content:center;padding:0 24px}
+.global-search{display:flex;align-items:center;gap:8px;background:var(--c-bg);border:1px solid #e0e0e0;padding:8px 16px;width:100%;max-width:480px;transition:border-color .2s}
+.global-search:focus-within{border-color:var(--c-accent);background:var(--c-white)}
+.global-search input{border:none;outline:none;font-family:var(--fb);font-size:13px;flex:1;color:var(--c-black);background:transparent}
+.global-search input::placeholder{color:var(--c-gray-mid)}
+.global-search .search-icon{color:var(--c-gray-text);font-size:13px}
 .header-right{display:flex;align-items:center;gap:16px}
 .header-avatar{width:32px;height:32px;border-radius:0;background:var(--c-navy);color:var(--c-white);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:13px;font-weight:700}
 
@@ -88,7 +94,9 @@ table.ds-table tr:hover td{background:var(--c-bg)}
   .overlay.visible{display:block}
   .main{margin-left:0}
   .hamburger{display:block}
-  .header{padding:0 16px}
+  .header{padding:0 16px;flex-wrap:wrap;height:auto;min-height:var(--header-h)}
+  .header-center{order:3;width:100%;padding:8px 0 12px;justify-content:stretch}
+  .global-search{max-width:none}
   .content{padding:20px 16px}
   .toolbar{flex-direction:column;align-items:stretch}
   .search-box{max-width:none}
@@ -137,7 +145,12 @@ table.ds-table tr:hover td{background:var(--c-bg)}
     <header class="header">
       <div class="header-left">
         <button class="hamburger" id="hamburger">&#9776;</button>
-        <h1>Grupos Empresariales</h1>
+      </div>
+      <div class="header-center">
+        <div class="global-search">
+          <span class="search-icon">&#128269;</span>
+          <input type="text" placeholder="Buscar grupos, empresas, proyectos...">
+        </div>
       </div>
       <div class="header-right">
         <div class="header-avatar">GE</div>
@@ -172,28 +185,28 @@ table.ds-table tr:hover td{background:var(--c-bg)}
             </thead>
             <tbody>
               <tr>
-                <td><a href="#" class="table-link">Grupo Deacero</a></td>
+                <td><a href="grupo-detalle.html" class="table-link">Grupo Deacero</a></td>
                 <td>Mexico</td>
                 <td><span class="badge badge-accent">11</span></td>
                 <td><span class="badge">9</span></td>
                 <td class="socio">Gabriel</td>
               </tr>
               <tr>
-                <td><a href="#" class="table-link">Grupo Metallic</a></td>
+                <td><a href="grupo-detalle.html" class="table-link">Grupo Metallic</a></td>
                 <td>Mexico</td>
                 <td><span class="badge badge-accent">8</span></td>
                 <td><span class="badge">6</span></td>
                 <td class="socio">Carlos</td>
               </tr>
               <tr>
-                <td><a href="#" class="table-link">Grupo La Loma</a></td>
+                <td><a href="grupo-detalle.html" class="table-link">Grupo La Loma</a></td>
                 <td>Mexico</td>
                 <td><span class="badge badge-accent">14</span></td>
                 <td><span class="badge">11</span></td>
                 <td class="socio">Omar</td>
               </tr>
               <tr>
-                <td><a href="#" class="table-link">Grupo Stiva</a></td>
+                <td><a href="grupo-detalle.html" class="table-link">Grupo Stiva</a></td>
                 <td>Mexico</td>
                 <td><span class="badge badge-accent">7</span></td>
                 <td><span class="badge">5</span></td>
