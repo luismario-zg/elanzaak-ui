@@ -20,6 +20,12 @@ body{font-family:var(--fb);font-size:16px;color:var(--c-black);background:#e8e8e
 .sec h2{font-family:var(--fh);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--c-gray-text);margin-bottom:28px;padding-bottom:10px;border-bottom:1px solid var(--c-gray-mid)}
 .app-header{background:var(--c-white);box-shadow:var(--sh);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;border-radius:0}
 .logo-ph{width:120px;height:32px;background:var(--c-gray-mid);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--c-gray-text);font-family:var(--fb)}
+.header-center{flex:1;display:flex;justify-content:center;padding:0 24px}
+.global-search{display:flex;align-items:center;gap:8px;background:var(--c-bg);border:1px solid #e0e0e0;padding:8px 16px;width:100%;max-width:480px;transition:border-color .2s}
+.global-search:focus-within{border-color:var(--c-accent);background:var(--c-white)}
+.global-search input{border:none;outline:none;font-family:var(--fb);font-size:13px;flex:1;color:var(--c-black);background:transparent}
+.global-search input::placeholder{color:var(--c-gray-mid)}
+.global-search .icon{color:var(--c-gray-text);font-size:13px}
 .header-right{display:flex;align-items:center;gap:16px}
 .header-avatar{width:32px;height:32px;border-radius:0;background:var(--c-navy);color:var(--c-white);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:13px;font-weight:700}
 .layout-demo{display:flex;min-height:400px;border:1px solid #e0e0e0;overflow:hidden}
@@ -124,12 +130,22 @@ table.ds-table tr:hover td{background:var(--c-bg)}
 <!-- HEADER APP -->
 <div class="sec" style="margin-top:32px">
 <h2>Header de Aplicacion</h2>
-<p style="font-size:14px;color:var(--c-gray-text);margin-bottom:16px;line-height:1.7">El header muestra solo el avatar del usuario. El boton de cerrar sesion vive unicamente en el sidebar (hasta abajo).</p>
+<p style="font-size:14px;color:var(--c-gray-text);margin-bottom:16px;line-height:1.7">Layout de 3 columnas: <strong>hamburger/logo a la izquierda</strong>, <strong>buscador global centrado</strong>, <strong>avatar a la derecha</strong>. En movil, el buscador se angosta (max-width:200px) y el avatar se mantiene a la derecha. El boton de cerrar sesion vive unicamente en el sidebar.</p>
 <div class="app-header">
 <div class="logo-ph">LOGO ELAN ZAAK</div>
+<div class="header-center" style="display:flex;justify-content:center">
+<div class="global-search" style="border:1px solid #e0e0e0;padding:8px 16px;display:flex;align-items:center;gap:8px;background:var(--c-bg)">
+<span class="icon" style="color:#555;font-size:13px">&#128269;</span>
+<input type="text" placeholder="Buscar grupos, empresas, proyectos..." style="border:none;outline:none;font-family:var(--fb);font-size:13px;flex:1;background:transparent">
+</div>
+</div>
 <div class="header-right">
 <div class="header-avatar">GE</div>
 </div>
+</div>
+
+<div style="background:#f0f0f0;padding:16px 20px;font-size:13px;line-height:1.7;margin-top:16px;border-left:3px solid var(--c-accent)">
+  <strong>Regla responsive:</strong> En movil (&lt;768px), el header NO hace wrap. El buscador se reduce a <code style="font-family:monospace;background:#fff;padding:1px 5px">max-width:200px</code>. El avatar siempre queda a la derecha.
 </div>
 </div>
 
