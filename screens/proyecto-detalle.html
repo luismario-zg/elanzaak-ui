@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Elan Zaak — Estudio de Precios de Transferencia 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --c-black:#000;--c-white:#fff;--c-accent:#2ea3f2;--c-danger:#ff6261;
+  --c-success:#4CAF50;--c-warning:#FFC107;--c-navy:#00639a;
+  --c-bg:#f9f9f9;--c-sidebar:#f3f3f3;--c-gray-mid:#ccc;--c-gray-text:#555;
+  --fh:'Archivo',sans-serif;--fb:'Open Sans',sans-serif;
+  --sh:0 2px 8px rgba(0,0,0,.08);--sidebar-w:240px;--header-h:64px;
+}
+html{overflow-x:hidden;max-width:100vw}
+body{font-family:var(--fb);font-size:16px;color:var(--c-black);background:var(--c-bg);line-height:1.7;-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:hidden;max-width:100vw;min-height:100vh}
+
+/* ── LAYOUT ── */
+.app{display:flex;min-height:100vh}
+.sidebar{width:var(--sidebar-w);background:var(--c-sidebar);border-right:1px solid #e0e0e0;position:fixed;top:0;left:0;bottom:0;display:flex;flex-direction:column;z-index:100;transition:transform .25s ease}
+.main{margin-left:var(--sidebar-w);flex:1;display:flex;flex-direction:column;min-height:100vh}
+.header{background:var(--c-white);box-shadow:var(--sh);height:var(--header-h);display:flex;align-items:center;justify-content:space-between;padding:0 32px;position:sticky;top:0;z-index:50}
+.content{flex:1;padding:32px}
+
+/* ── SIDEBAR ── */
+.sidebar-logo{padding:20px 24px;border-bottom:1px solid #e0e0e0}
+.sidebar-logo .brand{font-family:var(--fh);font-size:1.2rem;font-weight:700;color:var(--c-black);letter-spacing:.02em}
+.sidebar-logo .brand span{color:var(--c-accent)}
+.sidebar-logo .sub{font-size:11px;color:var(--c-gray-text);letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
+.sidebar-nav{flex:1;padding:16px 0;overflow-y:auto}
+.sidebar-section{font-family:var(--fh);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--c-gray-text);padding:12px 24px 8px}
+.sidebar-link{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--c-gray-text);padding:10px 24px;text-decoration:none;transition:all .15s;border-left:4px solid transparent;cursor:pointer}
+.sidebar-link:hover{background:#e9e9e9;color:var(--c-black)}
+.sidebar-link.active{border-left-color:var(--c-navy);background:var(--c-white);color:var(--c-black);font-weight:600}
+.sidebar-link .icon{width:18px;text-align:center;font-size:15px}
+.sidebar-bottom{padding:16px 24px;border-top:1px solid #e0e0e0}
+.sidebar-logout{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--c-danger);text-decoration:none;font-weight:600}
+.sidebar-logout:hover{text-decoration:underline}
+
+/* ── HEADER ── */
+.header-left{display:flex;align-items:center;gap:16px}
+.header-left h1{font-family:var(--fh);font-size:1.1rem;font-weight:700;color:var(--c-black)}
+.search-toggle{background:none;border:none;font-size:18px;cursor:pointer;color:var(--c-gray-text);padding:6px;transition:color .2s;display:flex;align-items:center}
+.search-toggle:hover{color:var(--c-accent)}
+.search-expand{position:absolute;right:0;top:100%;background:var(--c-white);box-shadow:var(--sh);padding:12px 16px;display:none;min-width:320px;margin-top:4px}
+.search-expand.open{display:flex;align-items:center;gap:8px}
+.search-expand input{border:1px solid #e0e0e0;outline:none;font-family:var(--fb);font-size:13px;flex:1;padding:8px 12px;color:var(--c-black);border-radius:0}
+.search-expand input:focus{border-color:var(--c-accent)}
+.search-expand .search-icon{color:var(--c-gray-text);font-size:14px}
+.header-right{display:flex;align-items:center;gap:16px}
+.header-avatar{width:32px;height:32px;border-radius:0;background:var(--c-navy);color:var(--c-white);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:13px;font-weight:700}
+
+/* ── HAMBURGER ── */
+.hamburger{display:none;background:none;border:none;font-size:22px;cursor:pointer;color:var(--c-black);padding:4px}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:90}
+
+/* ── BREADCRUMB ── */
+.breadcrumb{font-size:13px;color:var(--c-gray-text);margin-bottom:24px}
+.breadcrumb a{color:var(--c-accent);text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.breadcrumb .sep{margin:0 8px;color:var(--c-gray-mid)}
+
+/* ── PROYECTO HEADER ── */
+.proy-header{background:var(--c-white);box-shadow:var(--sh);padding:32px;margin-bottom:24px}
+.proy-header-main{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap}
+.proy-info h2{font-family:var(--fh);font-size:1.5rem;font-weight:700;color:var(--c-black);margin-bottom:8px}
+.proy-info .empresa{font-size:14px;color:var(--c-gray-text);margin-bottom:16px}
+.proy-info .empresa a{color:var(--c-accent);text-decoration:none}
+.proy-info .empresa a:hover{text-decoration:underline}
+.proy-meta{display:flex;gap:32px;flex-wrap:wrap}
+.proy-meta .meta-item{display:flex;flex-direction:column;gap:2px}
+.proy-meta .meta-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--c-gray-text)}
+.proy-meta .meta-value{font-size:14px;color:var(--c-black)}
+.proy-actions{display:flex;gap:12px;align-items:flex-start}
+
+/* ── BTN ── */
+.btn{font-family:var(--fh);font-size:14px;font-weight:600;padding:12px 28px;border-radius:0;cursor:pointer;letter-spacing:.04em;transition:background .2s,color .2s,border-color .2s;display:inline-flex;align-items:center;gap:8px;text-decoration:none;border:2px solid transparent}
+.btn-primary{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}.btn-primary:hover{background:#1a8fd4;border-color:#1a8fd4}
+.btn-secondary{background:transparent;color:var(--c-accent);border-color:var(--c-accent)}.btn-secondary:hover{background:var(--c-accent);color:#fff}
+.btn-dark{background:var(--c-black);color:#fff;border-color:var(--c-black)}.btn-dark:hover{background:#333;border-color:#333}
+
+/* ── SECTIONS ── */
+.section{background:var(--c-white);box-shadow:var(--sh);margin-bottom:24px;padding:28px}
+.section h3{font-family:var(--fh);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--c-gray-text);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--c-gray-mid)}
+
+/* ── TABLA ── */
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.ds-table{width:100%;border-collapse:collapse;font-size:14px}
+table.ds-table th{font-family:var(--fb);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--c-gray-text);text-align:left;padding:12px;border-bottom:2px solid var(--c-gray-mid)}
+table.ds-table td{padding:12px;border-bottom:1px solid #f0f0f0;font-family:var(--fb);color:#333}
+table.ds-table tr:hover td{background:var(--c-bg)}
+.table-link{color:var(--c-accent);text-decoration:none;font-weight:600}
+.table-link:hover{text-decoration:underline}
+.badge{font-family:var(--fb);font-size:12px;font-weight:600;padding:3px 10px;display:inline-block;border-radius:0;background:var(--c-bg);color:var(--c-gray-text);border:1px solid #e0e0e0}
+.badge-accent{background:rgba(46,163,242,.1);color:var(--c-accent);border-color:rgba(46,163,242,.2)}
+.badge-success{background:rgba(76,175,80,.1);color:var(--c-success);border-color:rgba(76,175,80,.2)}
+.badge-warning{background:rgba(255,193,7,.15);color:#b28704;border-color:rgba(255,193,7,.3)}
+.badge-danger{background:rgba(255,98,97,.1);color:var(--c-danger);border-color:rgba(255,98,97,.2)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:767px){
+  html,body,.app,.main,.content{overflow-x:hidden;max-width:100vw}
+  .sidebar{transform:translateX(-100%)}
+  .sidebar.open{transform:translateX(0)}
+  .overlay.visible{display:block}
+  .main{margin-left:0}
+  .hamburger{display:block}
+  .header{padding:0 16px}
+  .content{padding:20px 16px}
+  .proy-header-main{flex-direction:column}
+  .proy-meta{gap:16px}
+}
+</style>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <div class="brand">Elan <span>Zaak</span></div>
+      <div class="sub">CRM Precios de Transferencia</div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section">Principal</div>
+      <a href="dashboard.html" class="sidebar-link">
+        <span class="icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span> Dashboard
+      </a>
+      <div class="sidebar-section">Gestion</div>
+      <a href="grupos.html" class="sidebar-link">
+        <span class="icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></span> Grupos Empresariales
+      </a>
+      <a href="#" class="sidebar-link">
+        <span class="icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></span> Proyectos
+      </a>
+      <div class="sidebar-section">Sistema</div>
+      <a href="#" class="sidebar-link">
+        <span class="icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></span> Configuracion
+      </a>
+    </nav>
+    <div class="sidebar-bottom">
+      <a href="login.html" class="sidebar-logout"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg> Cerrar sesion</a>
+    </div>
+  </aside>
+
+  <!-- OVERLAY (mobile) -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-left">
+        <button class="hamburger" id="hamburger"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+      <div class="header-right" style="position:relative">
+        <button class="search-toggle" id="searchToggle"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></button>
+        <div class="search-expand" id="searchExpand">
+          <span class="search-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></span>
+          <input type="text" placeholder="Buscar grupos, empresas, proyectos..." id="searchInput">
+        </div>
+        <div class="header-avatar">GE</div>
+      </div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+      <!-- BREADCRUMB -->
+      <div class="breadcrumb">
+        <a href="grupos.html">Grupos Empresariales</a>
+        <span class="sep">&gt;</span>
+        <a href="grupo-detalle.html">Grupo Metallic</a>
+        <span class="sep">&gt;</span>
+        <a href="empresa-detalle.html">Metallic Building Company</a>
+        <span class="sep">&gt;</span>
+        <span>Estudio de Precios de Transferencia 2025</span>
+      </div>
+
+      <!-- PROYECTO HEADER -->
+      <div class="proy-header">
+        <div class="proy-header-main">
+          <div class="proy-info">
+            <h2>Estudio de Precios de Transferencia 2025</h2>
+            <p class="empresa">
+              <a href="empresa-detalle.html">Metallic Building Company, S.A. de C.V.</a>
+            </p>
+            <div class="proy-meta">
+              <div class="meta-item">
+                <span class="meta-label">Ejercicio Fiscal</span>
+                <span class="meta-value">2025</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Tipo de Reporte</span>
+                <span class="meta-value">EPT</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Fecha de Inicio</span>
+                <span class="meta-value">15/01/2025</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Fecha Estimada</span>
+                <span class="meta-value">15/04/2025</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Estatus</span>
+                <span class="meta-value" style="color:var(--c-accent);font-weight:600">En Proceso</span>
+              </div>
+            </div>
+          </div>
+          <div class="proy-actions">
+            <a href="#" class="btn btn-secondary">Editar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECCION: TRANSACCIONES -->
+      <div class="section">
+        <h3>Transacciones</h3>
+        <div class="table-wrap">
+          <table class="ds-table">
+            <thead>
+              <tr>
+                <th>ID Transaccion</th>
+                <th>Tipo de Operacion</th>
+                <th>Empresa Relacionada</th>
+                <th>Pais</th>
+                <th>Monto (USD)</th>
+                <th>Metodo TP</th>
+                <th>Estatus</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="#" class="table-link">TRX-2025-001</a></td>
+                <td>Compra de bienes</td>
+                <td>Metallic USA Inc.</td>
+                <td>Estados Unidos</td>
+                <td>$2,450,000.00</td>
+                <td>Precio comparable no controlado</td>
+                <td><span class="badge badge-success">Validada</span></td>
+              </tr>
+              <tr>
+                <td><a href="#" class="table-link">TRX-2025-002</a></td>
+                <td>Servicios de administracion</td>
+                <td>Metallic USA Inc.</td>
+                <td>Estados Unidos</td>
+                <td>$450,000.00</td>
+                <td>Participacion en costos</td>
+                <td><span class="badge badge-success">Validada</span></td>
+              </tr>
+              <tr>
+                <td><a href="#" class="table-link">TRX-2025-003</a></td>
+                <td>Arrendamiento</td>
+                <td>Metallic Holdings B.V.</td>
+                <td>Paises Bajos</td>
+                <td>$180,000.00</td>
+                <td>Precio comparable no controlado</td>
+                <td><span class="badge badge-warning">Pendiente</span></td>
+              </tr>
+              <tr>
+                <td><a href="#" class="table-link">TRX-2025-004</a></td>
+                <td>Prestamo intercompania</td>
+                <td>Metallic Finance S.A.</td>
+                <td>Luxemburgo</td>
+                <td>$5,000,000.00</td>
+                <td>Precio comparable no controlado</td>
+                <td><span class="badge badge-warning">Pendiente</span></td>
+              </tr>
+              <tr>
+                <td><a href="#" class="table-link">TRX-2025-005</a></td>
+                <td>Venta de bienes</td>
+                <td>Metallic Canada Ltd.</td>
+                <td>Canada</td>
+                <td>$1,230,000.00</td>
+                <td>Margen transaccional</td>
+                <td><span class="badge badge-success">Validada</span></td>
+              </tr>
+              <tr>
+                <td><a href="#" class="table-link">TRX-2025-006</a></td>
+                <td>Royalties</td>
+                <td>Metallic IP Holdings Ltd.</td>
+                <td>Irlanda</td>
+                <td>$320,000.00</td>
+                <td>Contrato comparable</td>
+                <td><span class="badge badge-danger">Requiere revision</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- SECCION: ANEXO 9 -->
+      <div class="section">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+          <h3 style="margin-bottom:0;padding-bottom:0;border-bottom:none">Anexo 9</h3>
+          <a href="#" class="btn btn-primary">Generar Anexo 9</a>
+        </div>
+        <div class="table-wrap">
+          <table class="ds-table">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Fuente</th>
+                <th>Estatus</th>
+                <th>Transacciones</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>10/03/2025 14:32</td>
+                <td>PDF EPT 2024 (procesado)</td>
+                <td><span class="badge badge-success">Completado</span></td>
+                <td>42 transacciones extraidas</td>
+                <td><a href="#" class="table-link">Ver</a> · <a href="#" class="table-link">Descargar</a></td>
+              </tr>
+              <tr>
+                <td>15/02/2025 09:15</td>
+                <td>Manual / Carga directa</td>
+                <td><span class="badge badge-success">Completado</span></td>
+                <td>6 transacciones ingresadas</td>
+                <td><a href="#" class="table-link">Ver</a> · <a href="#" class="table-link">Descargar</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div><!-- /content -->
+  </div><!-- /main -->
+</div><!-- /app -->
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('overlay');
+
+hamburger.addEventListener('click', () => {
+  sidebar.classList.toggle('open');
+  overlay.classList.toggle('visible');
+});
+overlay.addEventListener('click', () => {
+  sidebar.classList.remove('open');
+  overlay.classList.remove('visible');
+});
+
+const searchToggle = document.getElementById('searchToggle');
+const searchExpand = document.getElementById('searchExpand');
+const searchInputEl = document.getElementById('searchInput');
+searchToggle.addEventListener('click', () => {
+  searchExpand.classList.toggle('open');
+  if (searchExpand.classList.contains('open')) searchInputEl.focus();
+});
+document.addEventListener('click', (e) => {
+  if (!searchExpand.contains(e.target) && !searchToggle.contains(e.target)) {
+    searchExpand.classList.remove('open');
+  }
+});
+</script>
+</body>
+</html>
