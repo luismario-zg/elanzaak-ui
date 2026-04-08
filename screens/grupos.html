@@ -240,7 +240,7 @@ searchToggle.addEventListener('click', () => {
   if (searchExpand.classList.contains('open')) searchInputEl.focus();
 });
 document.addEventListener('click', (e) => {
-  if (!searchExpand.contains(e.target) && e.target !== searchToggle) {
+  if (!searchExpand.contains(e.target) && !searchToggle.contains(e.target)) {
     searchExpand.classList.remove('open');
   }
 });
