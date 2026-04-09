@@ -6,7 +6,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>Elan Zaak — Estudio de Precios de Transferencia 2025</title>
+<title>Elan Zaak — Proyecto Detalle</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -68,27 +68,25 @@ body{font-family:var(--fb);font-size:16px;color:var(--c-black);background:var(--
 .breadcrumb .sep{margin:0 8px;color:var(--c-gray-mid)}
 
 /* ── PROYECTO HEADER ── */
-.proy-header{background:var(--c-white);box-shadow:var(--sh);padding:32px;margin-bottom:24px}
-.proy-header-main{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap}
-.proy-info h2{font-family:var(--fh);font-size:1.5rem;font-weight:700;color:var(--c-black);margin-bottom:8px}
-.proy-info .empresa{font-size:14px;color:var(--c-gray-text);margin-bottom:16px}
-.proy-info .empresa a{color:var(--c-accent);text-decoration:none}
-.proy-info .empresa a:hover{text-decoration:underline}
-.proy-meta{display:flex;gap:32px;flex-wrap:wrap}
-.proy-meta .meta-item{display:flex;flex-direction:column;gap:2px}
-.proy-meta .meta-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--c-gray-text)}
-.proy-meta .meta-value{font-size:14px;color:var(--c-black)}
-.proy-actions{display:flex;gap:12px;align-items:flex-start}
+.emp-header{background:var(--c-white);box-shadow:var(--sh);padding:32px;margin-bottom:24px}
+.emp-header-main{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap}
+.emp-info h2{font-family:var(--fh);font-size:1.5rem;font-weight:700;color:var(--c-black);margin-bottom:4px}
+.emp-info .rfc{font-size:13px;color:var(--c-gray-text);margin-bottom:12px}
+.emp-meta{display:flex;gap:32px;flex-wrap:wrap;margin-top:20px}
+.emp-meta .meta-item{display:flex;flex-direction:column;gap:2px}
+.emp-meta .meta-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--c-gray-text)}
+.emp-meta .meta-value{font-size:14px;color:var(--c-black)}
+.emp-actions{display:flex;gap:12px;align-items:flex-start}
 
 /* ── BTN ── */
 .btn{font-family:var(--fh);font-size:14px;font-weight:600;padding:12px 28px;border-radius:0;cursor:pointer;letter-spacing:.04em;transition:background .2s,color .2s,border-color .2s;display:inline-flex;align-items:center;gap:8px;text-decoration:none;border:2px solid transparent}
 .btn-primary{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}.btn-primary:hover{background:#1a8fd4;border-color:#1a8fd4}
 .btn-secondary{background:transparent;color:var(--c-accent);border-color:var(--c-accent)}.btn-secondary:hover{background:var(--c-accent);color:#fff}
-.btn-dark{background:var(--c-black);color:#fff;border-color:var(--c-black)}.btn-dark:hover{background:#333;border-color:#333}
 
 /* ── SECTIONS ── */
-.section{background:var(--c-white);box-shadow:var(--sh);margin-bottom:24px;padding:28px}
-.section h3{font-family:var(--fh);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--c-gray-text);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--c-gray-mid)}
+.section-block{background:var(--c-white);box-shadow:var(--sh);padding:28px;margin-bottom:24px}
+.section-block-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #e0e0e0}
+.section-block h3{font-family:var(--fh);font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c-gray-text)}
 
 /* ── TABLA ── */
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
@@ -100,9 +98,8 @@ table.ds-table tr:hover td{background:var(--c-bg)}
 .table-link:hover{text-decoration:underline}
 .badge{font-family:var(--fb);font-size:12px;font-weight:600;padding:3px 10px;display:inline-block;border-radius:0;background:var(--c-bg);color:var(--c-gray-text);border:1px solid #e0e0e0}
 .badge-accent{background:rgba(46,163,242,.1);color:var(--c-accent);border-color:rgba(46,163,242,.2)}
-.badge-success{background:rgba(76,175,80,.1);color:var(--c-success);border-color:rgba(76,175,80,.2)}
 .badge-warning{background:rgba(255,193,7,.15);color:#b28704;border-color:rgba(255,193,7,.3)}
-.badge-danger{background:rgba(255,98,97,.1);color:var(--c-danger);border-color:rgba(255,98,97,.2)}
+.badge-success{background:rgba(76,175,80,.1);color:var(--c-success);border-color:rgba(76,175,80,.2)}
 
 /* ── RESPONSIVE ── */
 @media(max-width:767px){
@@ -114,8 +111,9 @@ table.ds-table tr:hover td{background:var(--c-bg)}
   .hamburger{display:block}
   .header{padding:0 16px}
   .content{padding:20px 16px}
-  .proy-header-main{flex-direction:column}
-  .proy-meta{gap:16px}
+  .emp-header-main{flex-direction:column}
+  .emp-meta{gap:16px}
+  .section-block-header{flex-direction:column;align-items:flex-start;gap:12px}
 }
 </style>
 </head>
@@ -138,7 +136,7 @@ table.ds-table tr:hover td{background:var(--c-bg)}
       <a href="grupos.html" class="sidebar-link">
         <span class="icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></span> Grupos Empresariales
       </a>
-      <a href="#" class="sidebar-link">
+      <a href="#" class="sidebar-link active">
         <span class="icon"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></span> Proyectos
       </a>
       <div class="sidebar-section">Sistema</div>
@@ -186,113 +184,75 @@ table.ds-table tr:hover td{background:var(--c-bg)}
         <span>Estudio de Precios de Transferencia 2025</span>
       </div>
 
-      <!-- PROYECTO HEADER -->
-      <div class="proy-header">
-        <div class="proy-header-main">
-          <div class="proy-info">
+      <!-- DATOS DEL PROYECTO (HEADER) -->
+      <div class="emp-header">
+        <div class="emp-header-main">
+          <div class="emp-info">
             <h2>Estudio de Precios de Transferencia 2025</h2>
-            <p class="empresa">
-              <a href="empresa-detalle.html">Metallic Building Company, S.A. de C.V.</a>
-            </p>
-            <div class="proy-meta">
+            <p class="rfc">Metallic Building Company, S.A. de C.V.</p>
+            <div class="emp-meta">
               <div class="meta-item">
                 <span class="meta-label">Ejercicio Fiscal</span>
                 <span class="meta-value">2025</span>
               </div>
               <div class="meta-item">
                 <span class="meta-label">Tipo de Reporte</span>
-                <span class="meta-value">EPT</span>
+                <span class="meta-value">Estudio TP</span>
               </div>
               <div class="meta-item">
-                <span class="meta-label">Fecha de Inicio</span>
-                <span class="meta-value">15/01/2025</span>
-              </div>
-              <div class="meta-item">
-                <span class="meta-label">Fecha Estimada</span>
-                <span class="meta-value">15/04/2025</span>
+                <span class="meta-label">Fecha Inicio</span>
+                <span class="meta-value">15/01/2026</span>
               </div>
               <div class="meta-item">
                 <span class="meta-label">Estatus</span>
-                <span class="meta-value" style="color:var(--c-accent);font-weight:600">En Proceso</span>
+                <span class="meta-value"><span class="badge badge-accent">En Proceso</span></span>
               </div>
             </div>
           </div>
-          <div class="proy-actions">
-            <a href="#" class="btn btn-secondary">Editar</a>
+          <div class="emp-actions">
+            <a href="#" class="btn btn-secondary">Editar Proyecto</a>
           </div>
         </div>
       </div>
 
       <!-- SECCION: TRANSACCIONES -->
-      <div class="section">
-        <h3>Transacciones</h3>
+      <div class="section-block">
+        <div class="section-block-header">
+          <h3>Transacciones Intercompañía</h3>
+          <a href="#" class="btn btn-secondary" style="padding:8px 16px; font-size:12px;">+ Nueva Transacción</a>
+        </div>
         <div class="table-wrap">
           <table class="ds-table">
             <thead>
               <tr>
-                <th>ID Transaccion</th>
-                <th>Tipo de Operacion</th>
-                <th>Empresa Relacionada</th>
-                <th>Pais</th>
-                <th>Monto (USD)</th>
-                <th>Metodo TP</th>
-                <th>Estatus</th>
+                <th>Operación</th>
+                <th>Contraparte (Ingresa/Egresa)</th>
+                <th>Monto (MXN)</th>
+                <th>Método Aplicado</th>
+                <th>PLI</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><a href="#" class="table-link">TRX-2025-001</a></td>
-                <td>Compra de bienes</td>
-                <td>Metallic USA Inc.</td>
-                <td>Estados Unidos</td>
-                <td>$2,450,000.00</td>
-                <td>Precio comparable no controlado</td>
-                <td><span class="badge badge-success">Validada</span></td>
+                <td>Ingresos por servicios administrativos</td>
+                <td>Metallic US Corp (Ingresa)</td>
+                <td>$ 5,450,000.00</td>
+                <td>Margen Transaccional de Utilidad (MTU)</td>
+                <td>MCAN</td>
               </tr>
               <tr>
-                <td><a href="#" class="table-link">TRX-2025-002</a></td>
-                <td>Servicios de administracion</td>
-                <td>Metallic USA Inc.</td>
-                <td>Estados Unidos</td>
-                <td>$450,000.00</td>
-                <td>Participacion en costos</td>
-                <td><span class="badge badge-success">Validada</span></td>
+                <td>Pago de regalías</td>
+                <td>Metallic Holdings (Egresa)</td>
+                <td>$ 2,100,000.00</td>
+                <td>Precio Comparable No Controlado (PC)</td>
+                <td>N/A</td>
               </tr>
               <tr>
-                <td><a href="#" class="table-link">TRX-2025-003</a></td>
-                <td>Arrendamiento</td>
-                <td>Metallic Holdings B.V.</td>
-                <td>Paises Bajos</td>
-                <td>$180,000.00</td>
-                <td>Precio comparable no controlado</td>
-                <td><span class="badge badge-warning">Pendiente</span></td>
-              </tr>
-              <tr>
-                <td><a href="#" class="table-link">TRX-2025-004</a></td>
-                <td>Prestamo intercompania</td>
-                <td>Metallic Finance S.A.</td>
-                <td>Luxemburgo</td>
-                <td>$5,000,000.00</td>
-                <td>Precio comparable no controlado</td>
-                <td><span class="badge badge-warning">Pendiente</span></td>
-              </tr>
-              <tr>
-                <td><a href="#" class="table-link">TRX-2025-005</a></td>
-                <td>Venta de bienes</td>
-                <td>Metallic Canada Ltd.</td>
-                <td>Canada</td>
-                <td>$1,230,000.00</td>
-                <td>Margen transaccional</td>
-                <td><span class="badge badge-success">Validada</span></td>
-              </tr>
-              <tr>
-                <td><a href="#" class="table-link">TRX-2025-006</a></td>
-                <td>Royalties</td>
-                <td>Metallic IP Holdings Ltd.</td>
-                <td>Irlanda</td>
-                <td>$320,000.00</td>
-                <td>Contrato comparable</td>
-                <td><span class="badge badge-danger">Requiere revision</span></td>
+                <td>Intereses pagados por préstamo</td>
+                <td>Metallic Finance Ltd. (Egresa)</td>
+                <td>$ 850,000.00</td>
+                <td>Precio Comparable No Controlado (PC)</td>
+                <td>N/A</td>
               </tr>
             </tbody>
           </table>
@@ -300,36 +260,44 @@ table.ds-table tr:hover td{background:var(--c-bg)}
       </div>
 
       <!-- SECCION: ANEXO 9 -->
-      <div class="section">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
-          <h3 style="margin-bottom:0;padding-bottom:0;border-bottom:none">Anexo 9</h3>
+      <div class="section-block">
+        <div class="section-block-header">
+          <h3>Generación Anexo 9 (Carga Batch)</h3>
           <a href="#" class="btn btn-primary">Generar Anexo 9</a>
         </div>
+        <p style="font-size:13px;color:var(--c-gray-text);margin-bottom:16px;">
+          Historial de procesos de extracción y generación del Anexo 9 para este proyecto.
+        </p>
         <div class="table-wrap">
           <table class="ds-table">
             <thead>
               <tr>
+                <th>ID Job</th>
                 <th>Fecha</th>
                 <th>Fuente</th>
                 <th>Estatus</th>
-                <th>Transacciones</th>
                 <th>Acciones</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>10/03/2025 14:32</td>
-                <td>PDF EPT 2024 (procesado)</td>
-                <td><span class="badge badge-success">Completado</span></td>
-                <td>42 transacciones extraidas</td>
-                <td><a href="#" class="table-link">Ver</a> · <a href="#" class="table-link">Descargar</a></td>
+                <td>#10045</td>
+                <td>18/02/2026 14:30</td>
+                <td>PDF: METALLIC-LF-FY25-Final.pdf</td>
+                <td><span class="badge badge-success">Generado</span></td>
+                <td>
+                  <a href="#" class="table-link" style="margin-right:12px;">Ver Preview</a>
+                  <a href="#" class="table-link">Descargar .xlsx</a>
+                </td>
               </tr>
               <tr>
-                <td>15/02/2025 09:15</td>
-                <td>Manual / Carga directa</td>
-                <td><span class="badge badge-success">Completado</span></td>
-                <td>6 transacciones ingresadas</td>
-                <td><a href="#" class="table-link">Ver</a> · <a href="#" class="table-link">Descargar</a></td>
+                <td>#09982</td>
+                <td>10/02/2026 09:15</td>
+                <td>PDF: Draft_Metallic_FY25.pdf</td>
+                <td><span class="badge badge-warning">Editado</span></td>
+                <td>
+                  <a href="#" class="table-link">Continuar edición</a>
+                </td>
               </tr>
             </tbody>
           </table>
