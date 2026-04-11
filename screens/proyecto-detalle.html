@@ -226,6 +226,7 @@ table.ds-table tr:hover td{background:var(--c-bg)}
             <thead>
               <tr>
                 <th>Operación</th>
+                <th>Origen</th>
                 <th>Contraparte (Ingresa/Egresa)</th>
                 <th>Monto (MXN)</th>
                 <th>Método Aplicado</th>
@@ -235,6 +236,7 @@ table.ds-table tr:hover td{background:var(--c-bg)}
             <tbody>
               <tr>
                 <td>Ingresos por servicios administrativos</td>
+                <td><span class="badge badge-accent">Extraída de PDF</span></td>
                 <td>Metallic US Corp (Ingresa)</td>
                 <td>$ 5,450,000.00</td>
                 <td>Margen Transaccional de Utilidad (MTU)</td>
@@ -242,6 +244,7 @@ table.ds-table tr:hover td{background:var(--c-bg)}
               </tr>
               <tr>
                 <td>Pago de regalías</td>
+                <td><span class="badge">Manual</span></td>
                 <td>Metallic Holdings (Egresa)</td>
                 <td>$ 2,100,000.00</td>
                 <td>Precio Comparable No Controlado (PC)</td>
@@ -249,6 +252,7 @@ table.ds-table tr:hover td{background:var(--c-bg)}
               </tr>
               <tr>
                 <td>Intereses pagados por préstamo</td>
+                <td><span class="badge">Sistema</span></td>
                 <td>Metallic Finance Ltd. (Egresa)</td>
                 <td>$ 850,000.00</td>
                 <td>Precio Comparable No Controlado (PC)</td>
@@ -275,6 +279,7 @@ table.ds-table tr:hover td{background:var(--c-bg)}
                 <th>ID Job</th>
                 <th>Fecha</th>
                 <th>Fuente</th>
+                <th>Archivo / Referencia</th>
                 <th>Estatus</th>
                 <th>Acciones</th>
               </tr>
@@ -283,7 +288,8 @@ table.ds-table tr:hover td{background:var(--c-bg)}
               <tr>
                 <td>#10045</td>
                 <td>18/02/2026 14:30</td>
-                <td>PDF: METALLIC-LF-FY25-Final.pdf</td>
+                <td><span class="badge badge-accent">PDF</span></td>
+                <td>METALLIC-LF-FY25-Final.pdf</td>
                 <td><span class="badge badge-success">Generado</span></td>
                 <td>
                   <a href="#" class="table-link" style="margin-right:12px;">Ver Preview</a>
@@ -293,10 +299,22 @@ table.ds-table tr:hover td{background:var(--c-bg)}
               <tr>
                 <td>#09982</td>
                 <td>10/02/2026 09:15</td>
-                <td>PDF: Draft_Metallic_FY25.pdf</td>
+                <td><span class="badge">Manual</span></td>
+                <td>Creación desde UI</td>
                 <td><span class="badge badge-warning">Editado</span></td>
                 <td>
                   <a href="#" class="table-link">Continuar edición</a>
+                </td>
+              </tr>
+              <tr>
+                <td>#09850</td>
+                <td>05/02/2026 11:20</td>
+                <td><span class="badge">Sistema</span></td>
+                <td>Importación ERP-003</td>
+                <td><span class="badge badge-success">Generado</span></td>
+                <td>
+                  <a href="#" class="table-link" style="margin-right:12px;">Ver Preview</a>
+                  <a href="#" class="table-link">Descargar .xlsx</a>
                 </td>
               </tr>
             </tbody>
